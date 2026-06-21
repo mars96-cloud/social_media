@@ -10,5 +10,10 @@
     "04_素材库如何直接影响AI内容质量.png",
     "05_素材库最怕的不是少而是乱.png",
     "06_先有素材库再做提示词会轻很多.png"
-  ]
+  ],
+  "cover_hook": "先存素材",
+  "cover_kicker": "不是先堆提示词",
+  "cover_variant": "burst-left",
+  "cover_prompt": "Chinese social-media cover background, reusable asset library shelves glowing while scattered prompt papers fly around, teal professional style, strong visual focus, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

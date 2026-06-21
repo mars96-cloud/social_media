@@ -87,3 +87,35 @@ AI 课程资料库 v3 已生成。
 - 04_私域答疑成交文案.docx
 - 05_开营通知与转介绍文案.docx
 - _本模块总目录.docx
+
+12_SOP标准操作课
+- 01_选题SOP怎么写.docx
+- 02_长文写作SOP.docx
+- 03_私域资料包SOP.docx
+- 04_训练营开营SOP.docx
+- 05_复盘优化SOP.docx
+- _本模块总目录.docx
+
+13_Workflow设计课
+- 01_从任务到Workflow.docx
+- 02_内容生产Workflow.docx
+- 03_私域承接Workflow.docx
+- 04_训练营交付Workflow.docx
+- 05_多人协作Workflow.docx
+- _本模块总目录.docx
+
+14_MCP与工具接入课
+- 01_MCP到底是什么.docx
+- 02_怎么接浏览器与文档能力.docx
+- 03_MCP配置案例.docx
+- 04_MCP常见报错排查.docx
+- 05_MCP能接进哪些业务.docx
+- _本模块总目录.docx
+
+15_交付与排错实战课
+- 01_为什么做了很多还是交付不出来.docx
+- 02_怎么改成自己的版本.docx
+- 03_常见故障排查方法.docx
+- 04_怎么给客户交付.docx
+- 05_怎么把一套资料持续迭代.docx
+- _本模块总目录.docx

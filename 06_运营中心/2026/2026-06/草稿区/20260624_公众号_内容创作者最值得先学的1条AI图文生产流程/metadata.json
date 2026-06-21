@@ -10,5 +10,11 @@
     "04_前三步决定是否跑偏.png",
     "05_后3步决定能不能成品.png",
     "06_先跑顺再放大.png"
-  ]
+  ],
+  "theme": "mint-grid",
+  "cover_hook": "先跑图文流",
+  "cover_kicker": "这条最值得学",
+  "cover_variant": "spotlight-right",
+  "cover_prompt": "Chinese social-media cover background, creator workflow with phone screen, article card, image card connected into one clear production line, fresh mint palette, sharp focal object, high-contrast, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

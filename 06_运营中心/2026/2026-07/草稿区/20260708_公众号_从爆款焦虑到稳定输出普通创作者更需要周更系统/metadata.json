@@ -1,7 +1,7 @@
 {
   "title": "从爆款焦虑到稳定输出，普通创作者更需要周更系统",
   "date": "20260708",
-  "theme": "blueprint",
+  "theme": "mint-grid",
   "cta": "关注我，后续日常推送与直播带你手把手开发自己的工作流与智能体。",
   "image_files": [
     "01_公众号封面.png",
@@ -10,5 +10,10 @@
     "04_AI在周更系统里最适合做的事情.png",
     "05_普通创作者最现实的周更目标是什么.png",
     "06_按系统周更后最大的变化是什么.png"
-  ]
+  ],
+  "cover_hook": "别赌爆款",
+  "cover_kicker": "先做周更系统",
+  "cover_variant": "spotlight-right",
+  "cover_prompt": "Chinese social-media cover background, anxious creator surrounded by exploding trending arrows versus a calm weekly system board, fresh green style, strong emotional contrast, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

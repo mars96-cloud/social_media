@@ -10,5 +10,11 @@
     "04_坑3没有判断人机分工.png",
     "05_坑4每次都从零开始.png",
     "06_坑5发完就结束没有承接.png"
-  ]
+  ],
+  "theme": "warm-paper",
+  "cover_hook": "这5个坑",
+  "cover_kicker": "最耗时间",
+  "cover_variant": "dark-card",
+  "cover_prompt": "Chinese social-media cover background, five warning pits or traps on a content production path, exaggerated hazard visuals, dramatic shadows, eye-catching warm palette, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

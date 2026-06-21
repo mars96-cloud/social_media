@@ -10,5 +10,11 @@
     "04_第二阶段把提效整理成路径.png",
     "05_第三阶段再进入变现动作.png",
     "06_普通人更现实的一条路是先稳再放大.png"
-  ]
+  ],
+  "theme": "studio-pop",
+  "cover_hook": "先提效再变现",
+  "cover_kicker": "这条更现实",
+  "cover_variant": "spotlight-right",
+  "cover_prompt": "Chinese social-media cover background, clear rising path from laptop productivity to simple monetization milestones, one realistic path instead of luxury fantasy, bright orange pop style, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

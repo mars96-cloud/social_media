@@ -10,5 +10,11 @@
     "04_第二条信息整理工作流.png",
     "05_第三条承接转化工作流.png",
     "06_哪条工作流该先开始.png"
-  ]
+  ],
+  "theme": "blueprint",
+  "cover_hook": "先别乱学",
+  "cover_kicker": "真正该搭流程",
+  "cover_variant": "burst-left",
+  "cover_prompt": "Chinese social-media cover background, three glowing workflow lanes cutting through a messy sea of floating AI app icons, bright blue tech style, dynamic perspective, punchy and dramatic, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

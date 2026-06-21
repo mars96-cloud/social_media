@@ -10,5 +10,10 @@
     "04_普通人最小内容中台怎么搭.png",
     "05_内容中台里人和AI怎么分工.png",
     "06_内容中台开始起作用的3个信号.png"
-  ]
+  ],
+  "cover_hook": "先有中台",
+  "cover_kicker": "别把AI当外挂",
+  "cover_variant": "warning-bar",
+  "cover_prompt": "Chinese social-media cover background, a creator standing before a central content command center while random AI tools float outside, exaggerated contrast, warm editorial palette, strong focal subject, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

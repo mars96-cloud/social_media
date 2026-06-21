@@ -10,5 +10,10 @@
     "04_AI最适合放大的3类能力.png",
     "05_什么东西最好别外包给AI.png",
     "06_把AI用成判断放大器后会发生什么.png"
-  ]
+  ],
+  "cover_hook": "别拿来偷懒",
+  "cover_kicker": "要拿来放大判断",
+  "cover_variant": "dark-card",
+  "cover_prompt": "Chinese social-media cover background, magnifying lens amplifying a creator's judgment notes while lazy shortcuts fade away, dramatic and punchy, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

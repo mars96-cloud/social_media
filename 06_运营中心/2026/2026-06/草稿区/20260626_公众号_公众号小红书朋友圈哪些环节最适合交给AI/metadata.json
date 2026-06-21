@@ -10,5 +10,11 @@
     "04_小红书最适合交给AI的环节.png",
     "05_朋友圈最适合交给AI的环节.png",
     "06_一套主逻辑多平台复用.png"
-  ]
+  ],
+  "theme": "slate-pro",
+  "cover_hook": "别全交AI",
+  "cover_kicker": "只放大这几步",
+  "cover_variant": "burst-left",
+  "cover_prompt": "Chinese social-media cover background, three platform panels and several workflow steps, some glowing as delegated to AI and some locked as human judgment, sleek teal editorial style, strong visual hierarchy, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

@@ -10,5 +10,11 @@
     "04_最适合先搭的三类工作流.png",
     "05_第一条工作流的四步搭建法.png",
     "06_工作流跑完后要复盘什么.png"
-  ]
+  ],
+  "theme": "warm-paper",
+  "cover_hook": "先搭系统",
+  "cover_kicker": "别先追新工具",
+  "cover_variant": "warning-bar",
+  "cover_prompt": "Chinese social-media cover background, exaggerated contrast between chaotic tool icons and one clear workflow path, cinematic warm paper and orange palette, strong focal object, bold light and shadow, high click-through energy, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

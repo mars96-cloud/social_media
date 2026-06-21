@@ -10,5 +10,10 @@
     "04_AI在选题系统里最适合做什么.png",
     "05_为什么选题池一定要打标签.png",
     "06_选题系统真正解决的是准确度不是数量.png"
-  ]
+  ],
+  "cover_hook": "题总重复",
+  "cover_kicker": "你缺的是系统",
+  "cover_variant": "burst-left",
+  "cover_prompt": "Chinese social-media cover background, repeated identical topic cards spinning in chaos while one organized topic system board glows, bright blue strategic mood, curiosity-driven, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

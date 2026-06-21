@@ -28,6 +28,7 @@ OUT_DIR = ROOT / "deliverables" / "course_library_v3"
 GEN_DIR = OUT_DIR / "generated_images"
 GEN_PNG_DIR = OUT_DIR / "generated_images_png"
 LOCAL_DIR = OUT_DIR / "_local_images"
+TOPIC_DIR = OUT_DIR / "_topic_images"
 
 
 COURSE_GROUPS = [
@@ -176,6 +177,63 @@ COURSE_GROUPS = [
     },
 ]
 
+COURSE_GROUPS.extend(
+    [
+        {
+            "folder": "12_SOP标准操作课",
+            "title": "SOP标准操作课",
+            "subtitle": "把常见任务拆成标准动作，不再只停留在知道概念",
+            "cover_prefix": "sop-practical-cover",
+            "docs": [
+                ("01_选题SOP怎么写", "把选题从凭感觉改成按步骤推进的标准动作", ["先写服务对象，再写问题场景，再写结果承接。", "先做出一个最小版本，再扩成批量版本。", "SOP 的重点不是好看，而是别人照着也能走。"]),
+                ("02_长文写作SOP", "把一篇长文从想法到成稿拆成可执行步骤", ["先定主判断。", "再列提纲。", "最后才让 AI 进入扩写和润色。"]),
+                ("03_私域资料包SOP", "把免费资料从想法变成真正能承接加你的资料包", ["先定关键词。", "再定目录。", "再定加你以后的跟进动作。"]),
+                ("04_训练营开营SOP", "把开营准备、通知、作业、答疑做成可重复执行动作", ["先准备交付节奏。", "再准备打卡机制。", "最后再讲开营氛围和转化。"]),
+                ("05_复盘优化SOP", "把复盘从泛泛总结变成下一轮可直接改的动作", ["只看关键指标。", "只找最卡一步。", "只改最影响结果的一个点。"]),
+            ],
+        },
+        {
+            "folder": "13_Workflow设计课",
+            "title": "Workflow设计课",
+            "subtitle": "把任务串成流程，让 AI、模板、人工判断各归各位",
+            "cover_prefix": "workflow-design-cover",
+            "docs": [
+                ("01_从任务到Workflow", "先把真实任务拆开，再决定怎么串成流程", ["任务没拆开，流程一定空。", "流程图不是形式，而是防止返工。", "先跑通最短流程，再考虑加工具。"]),
+                ("02_内容生产Workflow", "把选题、提纲、初稿、改写、发布串成一条线", ["每一步只产出一个明确结果。", "AI 负责提速，不负责替你做判断。", "流程越清楚，内容越稳定。"]),
+                ("03_私域承接Workflow", "把公开内容、私信、资料包、低客单接成闭环", ["先定入口。", "再定承接。", "最后定成交后的下一步。"]),
+                ("04_训练营交付Workflow", "把开营、作业、答疑、复盘做成连续动作", ["别只安排内容。", "更要安排提交和反馈。", "流程要让学员一直有下一步。"]),
+                ("05_多人协作Workflow", "把一个人能跑通的动作扩成团队可协作流程", ["先统一输入标准。", "再统一输出格式。", "最后统一复盘口径。"]),
+            ],
+        },
+        {
+            "folder": "14_MCP与工具接入课",
+            "title": "MCP与工具接入课",
+            "subtitle": "把工具接入、能力调用、半自动执行讲清楚，不再只是听概念",
+            "cover_prefix": "mcp-tools-cover",
+            "docs": [
+                ("01_MCP到底是什么", "把 MCP 讲成可接能力的标准接口，而不是玄乎的新名词", ["先理解它为什么存在。", "再理解它解决的是接入问题。", "最后才谈怎么为业务所用。"]),
+                ("02_怎么接浏览器与文档能力", "理解浏览器、文档、表格这类能力是怎么接进流程的", ["先确认任务。", "再确认工具能力。", "最后确认哪些动作必须人工确认。"]),
+                ("03_MCP配置案例", "给出能直接改的配置片段，不再停留在原理层", ["先跑最小可用配置。", "再加业务字段。", "最后再整理成团队标准模板。"]),
+                ("04_MCP常见报错排查", "把常见接入问题拆成一套排查动作", ["先看路径。", "再看权限。", "再看参数。"]),
+                ("05_MCP能接进哪些业务", "把工具接入落回选题、写作、资料交付、训练营这些真实任务", ["不是为了接而接。", "而是为了让任务更顺。", "能省时间的地方才值得接。"]),
+            ],
+        },
+        {
+            "folder": "15_交付与排错实战课",
+            "title": "交付与排错实战课",
+            "subtitle": "把最后一公里补齐，教会怎么改、怎么查、怎么交付出去",
+            "cover_prefix": "delivery-debug-cover",
+            "docs": [
+                ("01_为什么做了很多还是交付不出来", "把卡在最后一步的常见问题讲透", ["问题常常不在不会做，而在没有收口。", "没有交付格式，动作就容易散。", "先做出可交版本，再谈完美。"]),
+                ("02_怎么改成自己的版本", "把模板、文案、流程改成自己的业务表达", ["先改对象。", "再改场景。", "最后改 CTA 和结果。"]),
+                ("03_常见故障排查方法", "把内容、流程、配置、工具这些故障统一成排查思路", ["先缩小范围。", "再排除变量。", "最后记录结论。"]),
+                ("04_怎么给客户交付", "把资料、课程、模板、作业页变成真正可发出去的成品", ["交付要有命名。", "交付要有说明。", "交付要有下一步动作。"]),
+                ("05_怎么把一套资料持续迭代", "让课程资料不是一次性产物，而是越来越好用的资产", ["每轮只改高频问题。", "每轮都补真实案例。", "每轮都留下更稳定版本。"]),
+            ],
+        },
+    ]
+)
+
 
 LOCAL_IMAGE_MAP = {
     "concept": "01_ai_concept_map.png",
@@ -197,6 +255,10 @@ GROUP_FALLBACK_IMAGE = {
     "09_模板填空版": "learning",
     "10_训练营作业与打卡版": "funnel",
     "11_成交与预热文案包": "content",
+    "12_SOP标准操作课": "content",
+    "13_Workflow设计课": "learning",
+    "14_MCP与工具接入课": "concept",
+    "15_交付与排错实战课": "funnel",
 }
 
 
@@ -205,6 +267,7 @@ def ensure_dirs() -> None:
     GEN_DIR.mkdir(parents=True, exist_ok=True)
     GEN_PNG_DIR.mkdir(parents=True, exist_ok=True)
     LOCAL_DIR.mkdir(parents=True, exist_ok=True)
+    TOPIC_DIR.mkdir(parents=True, exist_ok=True)
     for group in COURSE_GROUPS:
         (OUT_DIR / group["folder"]).mkdir(parents=True, exist_ok=True)
 
@@ -238,6 +301,35 @@ def generate_local_banner(group: dict) -> Path:
             y += 250
         elif idx == 3:
             x = 370
+    image.save(path)
+    return path
+
+
+def generate_topic_banner(group: dict, stem: str, title: str, promise: str, bullets: list[str]) -> Path:
+    path = TOPIC_DIR / f"{group['folder']}_{stem}.png"
+    image = Image.new("RGB", (1600, 900), (246, 244, 239))
+    draw = ImageDraw.Draw(image)
+    title_font = get_font(52, bold=True)
+    sub_font = get_font(28)
+    body_font = get_font(26)
+    draw.text((70, 60), title, font=title_font, fill=(31, 43, 61))
+    for idx, line in enumerate(wrap_text(draw, promise, sub_font, 1380)):
+        draw.text((70, 145 + idx * 40), line, font=sub_font, fill=(88, 99, 116))
+
+    palette = [(255, 232, 214), (252, 241, 206), (221, 234, 251)]
+    positions = [(80, 300), (560, 300), (1040, 300)]
+    for idx, bullet in enumerate(bullets[:3]):
+        x, y = positions[idx]
+        draw.rounded_rectangle((x, y, x + 420, y + 300), radius=28, fill=palette[idx % len(palette)])
+        draw.text((x + 24, y + 24), f"重点 {idx + 1}", font=get_font(24, bold=True), fill=(30, 43, 61))
+        lines = wrap_text(draw, bullet, body_font, 370)
+        yy = y + 84
+        for line in lines[:6]:
+            draw.text((x + 24, yy), line, font=body_font, fill=(63, 77, 98))
+            yy += 34
+
+    footer_text = f"{group['title']} | {title}"
+    draw.text((70, 790), footer_text, font=sub_font, fill=(88, 99, 116))
     image.save(path)
     return path
 
@@ -333,6 +425,198 @@ def add_takeaway_checklist(doc: Document, title: str) -> None:
     )
 
 
+def add_real_use_case(doc: Document, folder: str, title: str) -> None:
+    doc.add_heading("实际案例：我会这样直接用", level=1)
+    if folder == "04_内容创作实操课":
+        add_paragraph(doc, "比如我现在要写一篇关于“为什么学了很多 AI 还是没提效”的图文。我不会一上来就让模型直接写成文，而是先自己写一句主判断：问题不在工具，而在流程。")
+        add_paragraph(doc, "然后我会让模型先帮我拆出 5 个最容易共鸣的卡点，再把这 5 个卡点排成一个阅读顺序，最后给每个卡点补两种更口语的说法。我自己保留最后拍板的权力。")
+        add_paragraph(doc, "这样做的结果，不是让我少思考，而是让我把思考放在更值钱的地方：决定观点、筛掉废话、保留真正能转化的表达。")
+    elif folder == "05_私域转化实操课":
+        add_paragraph(doc, "比如我要发一份免费资料包，我会先确定：这份资料包到底是给谁的、准备解决什么问题、看完以后我最想让对方做什么。")
+        add_paragraph(doc, "如果我的目标是让对方加我，那我只保留一个动作，比如‘想拿完整资料，私信我关键词资料’。我不会同时让他评论、关注、加群、去公众号，因为那样只会把动作打散。")
+        add_paragraph(doc, "对我来说，真正有效的承接从来都不是更花哨，而是更单一、更顺、更容易让对方迈出下一步。")
+    elif folder in {"06_赠送Skills与Workflow包", "08_可直接复制使用包", "09_模板填空版"}:
+        add_paragraph(doc, "如果我要把这一节做成可以送出去的模板或 workflow，我会先选一件自己已经真实做过很多次的事，而不是现想一个看起来很酷的例子。")
+        add_paragraph(doc, "我先把自己真实做过的步骤写出来，再把这些步骤压缩成别人也能直接照着走的模板。这样交出去的东西才不会空，也不会只有表面结构。")
+    else:
+        add_paragraph(doc, "我实际使用这一节时，会先抓一个最近就要发生的小任务。只要这件事已经在我手上，我就能立刻判断这一节内容到底帮不帮得上忙。")
+        add_paragraph(doc, "我不会先追求一次把所有环节都自动化，而是先让最耗时、最重复、最标准化的一步先顺起来。")
+
+
+def add_how_to_modify(doc: Document, folder: str, title: str) -> None:
+    doc.add_heading("拿到以后我会怎么改", level=1)
+    add_paragraph(doc, "我不会直接整段照搬。最先改的一定是对象、场景和最后结果。对象不对，整个内容都会跑偏；场景不对，案例就会变空；结果不对，CTA 也会失效。")
+    if folder in {"09_模板填空版", "11_成交与预热文案包"}:
+        add_paragraph(doc, "如果这是模板或文案，我会先把里面所有泛词换成我自己的业务表达。比如把‘用户’改成‘内容创作者’，把‘转化’改成‘加我拿资料’，把‘产品’改成‘7天训练营’。")
+        add_paragraph(doc, "换词以后，我会再删掉不属于我业务的句子。模板真正好用的标准，不是写得多完整，而是改完以后像我自己。")
+    else:
+        add_paragraph(doc, "如果这是方法课，我会先保留结构，不急着保留原句。结构是骨架，原句只是示范。只要骨架还在，我就能换成更适合自己的表达。")
+
+
+def add_problem_solving(doc: Document) -> None:
+    doc.add_heading("如果我做的时候卡住了", level=1)
+    add_bullets(
+        doc,
+        [
+            "先不要继续搜新工具，先看是不是目标写得太大。",
+            "先不要怀疑自己不会用 AI，先看是不是没有把任务拆成步骤。",
+            "先不要一口气全改，先只改最卡的一步。",
+            "先把一个版本跑完，再去判断下一轮改哪里。",
+        ],
+    )
+    add_paragraph(doc, "很多问题不是出在能力不够，而是出在一开始就把任务做得太复杂。只要我愿意先把问题缩小，很多卡点都会马上松开。")
+
+
+def add_code_block(doc: Document, title: str, content: str) -> None:
+    doc.add_paragraph(title)
+    for line in content.strip().splitlines():
+        p = doc.add_paragraph()
+        run = p.add_run(line)
+        run.font.name = "Courier New"
+        run.font.size = Pt(9)
+
+
+def add_markdown_examples(doc: Document, folder: str, title: str) -> None:
+    doc.add_heading("实际可复制示例", level=1)
+    if folder == "06_赠送Skills与Workflow包":
+        add_code_block(
+            doc,
+            "Skill 示例（Markdown）",
+            f"""
+---
+name: {title}
+description: 用来处理一类固定任务的简化技能卡
+---
+
+## 目标
+我先明确这次要完成的结果，而不是直接让 AI 自由发挥。
+
+## 输入
+- 服务对象
+- 当前素材
+- 最终输出格式
+
+## 执行步骤
+1. 先拆任务
+2. 再列结构
+3. 再补表达
+4. 最后人工确认
+""",
+        )
+        add_code_block(
+            doc,
+            "Workflow 示例（Markdown）",
+            f"""
+# {title} Workflow
+
+1. 明确对象是谁
+2. 明确这次只解决一个问题
+3. 先写主观点
+4. 让 AI 补提纲或表达
+5. 改成适合平台的版本
+6. 保留一个单一 CTA
+""",
+        )
+    elif folder == "08_可直接复制使用包":
+        add_code_block(
+            doc,
+            "直接复制模板",
+            f"""
+# {title}
+
+## 服务对象
+-
+
+## 当前问题
+-
+
+## 我这次想交付的结果
+-
+
+## 我准备用的结构
+1.
+2.
+3.
+
+## 最后承接动作
+-
+""",
+        )
+    elif folder == "09_模板填空版":
+        add_code_block(
+            doc,
+            "填空模板",
+            f"""
+# {title}
+
+我服务的人是：_____
+他们现在最卡的是：_____
+我这次只解决的问题是：_____
+我准备给出的结果是：_____
+我最后要引导的动作是：_____
+""",
+        )
+    elif folder == "10_训练营作业与打卡版":
+        add_code_block(
+            doc,
+            "作业与打卡模板",
+            f"""
+# {title}
+
+## 今天必须完成
+-
+
+## 今日提交内容
+-
+
+## 我今天卡住的点
+-
+
+## 我明天只改一个地方
+-
+""",
+        )
+    elif folder == "11_成交与预热文案包":
+        add_code_block(
+            doc,
+            "销售页文案骨架",
+            f"""
+# {title}
+
+你是不是也遇到过这样的情况：
+-
+
+为什么很多人一直做不成：
+-
+
+我这次准备怎么帮你缩短路径：
+-
+
+如果你想先看完整内容，回复我：资料
+""",
+        )
+    else:
+        add_code_block(
+            doc,
+            "实操记录模板",
+            f"""
+# {title}
+
+## 我这次处理的真实任务
+-
+
+## 我保留人工判断的地方
+-
+
+## 我交给 AI 提速的地方
+-
+
+## 我下一轮准备优化的地方
+-
+""",
+        )
+
+
 def add_direct_use_section(doc: Document, folder: str, title: str) -> None:
     doc.add_heading("可直接复制使用", level=1)
     if folder == "09_模板填空版":
@@ -363,6 +647,197 @@ def add_direct_use_section(doc: Document, folder: str, title: str) -> None:
         add_paragraph(doc, block)
 
 
+def add_folder_specific_deep_dive(doc: Document, folder: str, title: str) -> None:
+    if folder == "12_SOP标准操作课":
+        doc.add_heading("我会怎么把它写成 SOP", level=1)
+        add_numbered(
+            doc,
+            [
+                "先写这件事的触发条件。比如什么时候需要做这一步，而不是心血来潮才做。",
+                "再写输入物。比如我要先准备哪些资料、截图、标题草稿、历史案例。",
+                "再写执行动作，而且每一步尽量只写一个动作，不要把三个判断塞进一句话里。",
+                "最后写输出物。比如我要交付一条标题、一个提纲、一份资料包，而不是写成空泛的‘完成内容优化’。",
+            ],
+        )
+        add_paragraph(doc, "我做 SOP 时最怕的不是步骤少，而是步骤虚。只要别人读完还不知道第一步该动什么，这个 SOP 就还不能交付。")
+    elif folder == "13_Workflow设计课":
+        doc.add_heading("我会怎么把它串成 Workflow", level=1)
+        add_paragraph(doc, "我不会直接画一张很复杂的流程图。我会先把最短路径写出来：入口是什么，中间要经过哪几步，最后的结果是什么。只要这条最短路径跑通，后面再加分支和自动化都不迟。")
+        add_bullets(
+            doc,
+            [
+                "入口：这一轮动作是从哪里开始的。",
+                "中段：哪一步是 AI 提速，哪一步是我自己拍板。",
+                "出口：这一轮结束后留下了什么成品。",
+                "反馈：这一轮结果回来以后，我下一轮改哪一步。",
+            ],
+        )
+    elif folder == "14_MCP与工具接入课":
+        doc.add_heading("我会怎么理解 MCP", level=1)
+        add_paragraph(doc, "我会把 MCP 理解成一根标准插线板。模型本身会思考，但它要想碰到浏览器、文档、表格、网页、数据库这些真实能力，就要通过稳定接口去接。这样我不用每次都从零讲工具怎么调用，而是直接把能力插进流程。")
+        add_paragraph(doc, "所以我学 MCP，不是为了研究概念，而是为了让‘会想’和‘会做’之间少一层断裂。只要接得对，我就能把同一套工作方法迁移到不同任务里。")
+    elif folder == "15_交付与排错实战课":
+        doc.add_heading("我会怎么做最后一公里", level=1)
+        add_paragraph(doc, "我会先要求自己交出一个‘现在就能发’的版本。哪怕它还不够满，也必须已经能发、能讲、能承接。因为只有交付出去，我才知道客户真正卡在哪、哪些地方需要补、哪些表达只是我自以为重要。")
+        add_paragraph(doc, "排错也是一样。我不会一出问题就全部推翻重来，而是先锁定：问题出在内容、流程、配置还是动作顺序。只要范围锁住，排错速度会快很多。")
+    else:
+        doc.add_heading("我会怎么把这节课落到真实动作里", level=1)
+        add_paragraph(doc, "我会先挑一个最近 3 天一定要做的任务来练，不会挑一个以后也许会做的大项目。因为真正能让我学会的，从来不是理解得多，而是拿一个手头任务反复改顺。")
+        add_paragraph(doc, "如果这节课里有方法、有模板、有案例，我会优先保留方法和判断标准，再决定哪些句子、哪些格式适合直接套进我的业务。")
+
+
+def add_example_assets(doc: Document, folder: str, title: str) -> None:
+    doc.add_heading("现成资产示例", level=1)
+    if folder == "12_SOP标准操作课":
+        add_code_block(
+            doc,
+            "SOP 模板（Markdown）",
+            f"""
+# {title} SOP
+
+## 触发条件
+- 我要开始处理这类任务时
+
+## 输入物
+- 历史案例 3 条
+- 当前主题 1 个
+- 目标动作 1 个
+
+## 执行步骤
+1. 写服务对象
+2. 写痛点场景
+3. 写主判断
+4. 写结构提纲
+5. 写交付格式
+
+## 输出物
+- 可直接发出的初稿 1 版
+""",
+        )
+    elif folder == "13_Workflow设计课":
+        add_code_block(
+            doc,
+            "Workflow 图文版（Markdown）",
+            f"""
+# {title} Workflow
+
+入口：收到一个真实任务
+1. 先明确这次只解决一个问题
+2. 整理输入素材
+3. 我自己先定主观点
+4. 让 AI 输出提纲或改写版本
+5. 我确认最终版本
+6. 发布并记录反馈
+出口：留下一个可复用版本
+""",
+        )
+    elif folder == "14_MCP与工具接入课":
+        add_code_block(
+            doc,
+            "MCP 配置片段",
+            """
+{
+  "mcpServers": {
+    "browser-helper": {
+      "command": "npx",
+      "args": ["-y", "agent-browser"]
+    },
+    "doc-helper": {
+      "command": "python",
+      "args": ["tools/doc_worker.py"]
+    }
+  }
+}
+""",
+        )
+        add_code_block(
+            doc,
+            "我会怎么接进业务",
+            """
+1. 浏览器能力负责打开页面和保存草稿
+2. 文档能力负责整理内容和导出文档
+3. 人工确认负责最后发布和发送
+""",
+        )
+    elif folder == "15_交付与排错实战课":
+        add_code_block(
+            doc,
+            "排错记录模板",
+            f"""
+# {title} 排错记录
+
+## 问题现象
+-
+
+## 我先锁定的范围
+- 内容
+- 流程
+- 配置
+- 权限
+
+## 我已经排除的变量
+-
+
+## 最后结论
+-
+""",
+        )
+    else:
+        add_code_block(
+            doc,
+            "我会保留的实操记录",
+            f"""
+# {title}
+
+真实任务：
+我保留人工判断的地方：
+我交给 AI 提速的地方：
+我下一轮准备怎么改：
+""",
+        )
+
+
+def add_troubleshooting_examples(doc: Document, folder: str) -> None:
+    doc.add_heading("出问题时我会怎么查", level=1)
+    if folder == "14_MCP与工具接入课":
+        add_bullets(
+            doc,
+            [
+                "先看路径对不对。很多接入问题不是能力不行，而是根本没连上正确脚本或配置文件。",
+                "再看权限够不够。能读不能写、能打开不能保存，这类问题往往是权限边界没处理好。",
+                "再看参数有没有对齐。命令、模型、文件名、输出目录只要有一个写错，结果就会完全跑偏。",
+            ],
+        )
+    elif folder in {"12_SOP标准操作课", "13_Workflow设计课"}:
+        add_bullets(
+            doc,
+            [
+                "如果别人照着做还是不会，先看步骤是不是写得太抽象。",
+                "如果做的人总在中间卡住，先看是不是某一步输入物没定义清楚。",
+                "如果每次结果都不稳定，先看是不是把人工判断和 AI 自动步骤混在了一起。",
+            ],
+        )
+    else:
+        add_bullets(
+            doc,
+            [
+                "如果内容一改就散，先回到对象和场景，而不是继续加句子。",
+                "如果流程一跑就乱，先删步骤，保留最短路径。",
+                "如果客户看了没动作，先查 CTA 是不是写了多个方向。",
+            ],
+        )
+
+
+def add_customer_facing_use(doc: Document, folder: str, title: str) -> None:
+    doc.add_heading("我会怎么直接发给客户", level=1)
+    if folder == "11_成交与预热文案包":
+        add_paragraph(doc, "我不会一次把整套文案全丢给客户。我会先发最切他当前问题的那一段，让他先觉得‘这就是我现在卡的地方’，然后再顺势发下一段。这样阅读阻力最小，回应率也更高。")
+    elif folder == "14_MCP与工具接入课":
+        add_paragraph(doc, "如果客户还处在刚理解阶段，我不会先讲太多配置细节。我会先用一个具体场景去解释，比如‘为什么浏览器能力能帮我把草稿保存到固定位置’，等他觉得场景有用，再补接口和配置。")
+    else:
+        add_paragraph(doc, f"我直接发这节《{title}》时，会先加一句很短的引导：‘你先看这一份，不用全学，先把这里面一个动作跑顺。’ 这样对方不会被资料量吓住，也更愿意马上动。")
+
+
 def build_doc(group: dict, doc_item: tuple[str, str, list[str]]) -> Path:
     stem, promise, bullets = doc_item
     path = OUT_DIR / group["folder"] / f"{stem}.docx"
@@ -371,11 +846,11 @@ def build_doc(group: dict, doc_item: tuple[str, str, list[str]]) -> Path:
     doc = Document()
     configure_document(doc)
     add_title_block(doc, title, group["title"], promise)
-    add_paragraph(doc, "这是一份直接给客户阅读也不会突兀的课程讲义。你可以把它当作公开资料、低客单内容、系统课讲义底稿，或者训练营前置阅读材料。")
+    add_paragraph(doc, "我把这一节写成了能直接拿去看、拿去改、拿去用的版本。你不用先把全部学完，先抓住一个真实任务照着跑就行。")
 
-    generated = get_generated_cover(group["cover_prefix"])
-    if generated:
-        add_image(doc, generated, "课程主视觉")
+    topic_banner = generate_topic_banner(group, stem, title, promise, bullets)
+    if topic_banner.exists():
+        add_image(doc, topic_banner, "本篇主题图")
     fallback_key = GROUP_FALLBACK_IMAGE[group["folder"]]
     fallback_path = ROOT / "deliverables" / "course_materials" / "images" / LOCAL_IMAGE_MAP[fallback_key]
     if fallback_path.exists():
@@ -386,10 +861,18 @@ def build_doc(group: dict, doc_item: tuple[str, str, list[str]]) -> Path:
 
     build_story_sections(doc, title, promise, bullets)
     add_case_study(doc, title)
+    add_real_use_case(doc, group["folder"], title)
+    add_folder_specific_deep_dive(doc, group["folder"], title)
+    add_how_to_modify(doc, group["folder"], title)
     add_common_questions(doc, title)
     add_plain_examples(doc, title)
+    add_problem_solving(doc)
+    add_troubleshooting_examples(doc, group["folder"])
     add_practical_steps(doc, title)
+    add_example_assets(doc, group["folder"], title)
+    add_markdown_examples(doc, group["folder"], title)
     add_direct_use_section(doc, group["folder"], title)
+    add_customer_facing_use(doc, group["folder"], title)
     add_takeaway_checklist(doc, title)
 
     footer = doc.add_paragraph()

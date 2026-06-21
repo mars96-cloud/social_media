@@ -10,5 +10,10 @@
     "04_AI怎么把评论整理成需求池.png",
     "05_评论区还能帮你修内容承接流程.png",
     "06_评论区进入工作流后会带来什么变化.png"
-  ]
+  ],
+  "cover_hook": "评论最值钱",
+  "cover_kicker": "别只看点赞",
+  "cover_variant": "dark-card",
+  "cover_prompt": "Chinese social-media cover background, comment bubbles turning into gold demand cards, creator catching them with a net, dramatic newsroom energy, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

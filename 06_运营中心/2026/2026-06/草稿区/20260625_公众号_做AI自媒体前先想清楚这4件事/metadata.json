@@ -10,5 +10,11 @@
     "04_讲工具还是讲工作流和结果.png",
     "05_最小承接闭环长什么样.png",
     "06_想清楚这4件事会少很多弯路.png"
-  ]
+  ],
+  "theme": "studio-pop",
+  "cover_hook": "先想清楚",
+  "cover_kicker": "别急着开号",
+  "cover_variant": "diagonal-pop",
+  "cover_prompt": "Chinese social-media cover background, four oversized decision cards floating above a creator desk, dramatic orange highlights, suspenseful planning mood, strong composition, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

@@ -10,5 +10,11 @@
     "04_原因2写成了工具说明书.png",
     "05_原因3没有做最后的人类收口.png",
     "06_让AI写得更像人的3个动作.png"
-  ]
+  ],
+  "theme": "newsroom",
+  "cover_hook": "人味不见了",
+  "cover_kicker": "锅不在工具",
+  "cover_variant": "warning-bar",
+  "cover_prompt": "Chinese social-media cover background, stiff robotic manuscript versus lively handwritten notes, expressive contrast, a creator pulling one sheet away, dramatic editorial mood, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }

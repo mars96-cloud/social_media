@@ -10,5 +10,11 @@
     "04_第二个坑把判断外包给AI.png",
     "05_第三个坑没有模板化.png",
     "06_真正提效看哪三个层面.png"
-  ]
+  ],
+  "theme": "newsroom",
+  "cover_hook": "提效没来",
+  "cover_kicker": "问题不在工具",
+  "cover_variant": "dark-card",
+  "cover_prompt": "Chinese social-media cover background, overwhelmed creator at desk with many AI windows but tangled cables and clocks, one bright efficiency path missing, cinematic newsroom mood, dramatic, no text, no watermark.",
+  "cover_image": "01_公众号封面.png"
 }
