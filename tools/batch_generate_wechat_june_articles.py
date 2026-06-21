@@ -1222,41 +1222,40 @@ def normalize_intro(intro: str | list[str]) -> list[str]:
 
 
 def build_decision_card(spec: dict) -> str:
-    return "\n".join(
-        [
-            "# 内容决策卡",
-            "1. 目标人群",
-            "",
-            "内容创作者 / 个体经营者 / 想把 AI 真正用于工作流和轻变现的人。",
-            "",
-            "2. 内容支柱",
-            "",
-            spec["pillar"],
-            "",
-            "3. 当前目标",
-            "",
-            spec["current_goal"],
-            "",
-            "4. 选题判断",
-            "",
-            spec["topic_judgement"],
-            "",
-            "5. 主 CTA",
-            "",
-            f"公众号后台回复 `{spec['cta_keyword']}`，领取《{spec['cta_resource']}》。",
-            "",
-            "# 标题",
-            "",
-            spec["title"],
-            "",
-            "# 导语",
-            "",
-            *normalize_intro(spec["intro"]),
-            "",
-            "# 正文结构",
-            "",
-        ]
-    )
+    lines = [
+        "# 内容决策卡",
+        "1. 目标人群",
+        "",
+        "内容创作者 / 个体经营者 / 想把 AI 真正用于工作流和轻变现的人。",
+        "",
+        "2. 内容支柱",
+        "",
+        spec["pillar"],
+        "",
+        "3. 当前目标",
+        "",
+        spec["current_goal"],
+        "",
+        "4. 选题判断",
+        "",
+        spec["topic_judgement"],
+        "",
+        "5. 主 CTA",
+        "",
+        f"公众号后台回复 `{spec['cta_keyword']}`，领取 {spec['cta_resource']}。",
+        "",
+        "# 标题",
+        "",
+        spec["title"],
+        "",
+        "# 导语",
+        "",
+    ]
+    for paragraph in normalize_intro(spec["intro"]):
+        lines.append(paragraph)
+        lines.append("")
+    lines.extend(["# 正文结构", ""])
+    return "\n".join(lines)
 
 
 def build_publish_md(spec: dict) -> str:
@@ -1345,7 +1344,7 @@ def build_image_plan(spec: dict) -> str:
         [
             "## 转化承接建议",
             "",
-            f"1. 本文主 CTA 固定为“回复 `{spec['cta_keyword']}` 领取《{spec['cta_resource']}》”",
+            f"1. 本文主 CTA 固定为“回复 `{spec['cta_keyword']}` 领取 {spec['cta_resource']}”",
             "2. 不在同一篇文章里并列加入多个主 CTA，避免分散动作",
             "3. 正文承接顺序固定为：",
             "   - 先讲问题或误区",
