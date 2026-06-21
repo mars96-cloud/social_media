@@ -6,3 +6,9 @@ Desktop.ini
 *.tmp
 *.bak
 *.log
+
+# Local runtime artifacts
+__pycache__/
+*.pyc
+.tmp_*.json
+*_tmp.txt
