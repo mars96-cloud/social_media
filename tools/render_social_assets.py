@@ -7,12 +7,72 @@ from typing import Iterable
 from PIL import Image, ImageDraw, ImageFont
 
 
-BG = "#F7F1E8"
-PANEL = "#FFFDF9"
-DARK = "#20342E"
-GREEN = "#2E5E4E"
-ORANGE = "#F29F58"
-BORDER = "#E8D7C4"
+THEMES = {
+    "warm-paper": {
+        "bg": "#F7F1E8",
+        "panel": "#FFFDF9",
+        "ink": "#20342E",
+        "text": "#2E5E4E",
+        "accent": "#F29F58",
+        "accent_2": "#E8D7C4",
+        "brand": "AI趣创社",
+        "shape": "bars",
+    },
+    "blueprint": {
+        "bg": "#EAF3FF",
+        "panel": "#F8FBFF",
+        "ink": "#19324D",
+        "text": "#315D84",
+        "accent": "#4C8DFF",
+        "accent_2": "#BED6FF",
+        "brand": "AI工作流实验室",
+        "shape": "grid",
+    },
+    "newsroom": {
+        "bg": "#F7F4EF",
+        "panel": "#FFFDFC",
+        "ink": "#2E2620",
+        "text": "#5E4A3D",
+        "accent": "#C75B39",
+        "accent_2": "#E9C7B8",
+        "brand": "AI实战笔记",
+        "shape": "frame",
+    },
+    "mint-grid": {
+        "bg": "#EEF7F2",
+        "panel": "#FCFFFD",
+        "ink": "#17392D",
+        "text": "#2F6A55",
+        "accent": "#57B58A",
+        "accent_2": "#CFE8DB",
+        "brand": "智能体流程手册",
+        "shape": "pills",
+    },
+    "studio-pop": {
+        "bg": "#FFF4E8",
+        "panel": "#FFFDFB",
+        "ink": "#3A2418",
+        "text": "#6B4631",
+        "accent": "#FF8A3D",
+        "accent_2": "#FFD0B0",
+        "brand": "AI增长工作室",
+        "shape": "circles",
+    },
+    "slate-pro": {
+        "bg": "#EEF1F5",
+        "panel": "#FAFCFF",
+        "ink": "#1F2937",
+        "text": "#475569",
+        "accent": "#0EA5A3",
+        "accent_2": "#B8E6E4",
+        "brand": "AI流程图谱",
+        "shape": "panel",
+    },
+}
+
+
+def get_theme(theme: str) -> dict[str, str]:
+    return THEMES.get(theme, THEMES["warm-paper"])
 
 
 def pick_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -67,8 +127,9 @@ def draw_wrapped(
     return y + len(lines) * line_height
 
 
-def draw_card_base(size: tuple[int, int], background_path: Path | None = None) -> Image.Image:
-    image = Image.new("RGB", size, BG)
+def draw_card_base(size: tuple[int, int], theme: str, background_path: Path | None = None) -> Image.Image:
+    palette = get_theme(theme)
+    image = Image.new("RGB", size, palette["bg"])
     if background_path and background_path.exists():
         bg = Image.open(background_path).convert("RGB").resize(size)
         image = Image.blend(bg, image, 0.72)
@@ -80,38 +141,95 @@ def save(image: Image.Image, path: Path) -> None:
     image.save(path, format="PNG")
 
 
-def render_wechat_cover(output_path: Path, background_path: Path, title: str, subtitle: str) -> None:
-    image = draw_card_base((900, 383), background_path)
+def draw_cover_accents(draw: ImageDraw.ImageDraw, palette: dict[str, str]) -> None:
+    shape = palette["shape"]
+    if shape == "grid":
+        for x in range(36, 900, 44):
+            draw.line((x, 24, x, 360), fill=palette["accent_2"], width=1)
+        for y in range(32, 360, 40):
+            draw.line((24, y, 876, y), fill=palette["accent_2"], width=1)
+    elif shape == "frame":
+        draw.rectangle((34, 34, 866, 349), outline=palette["accent"], width=4)
+        draw.line((70, 302, 830, 302), fill=palette["accent_2"], width=3)
+    elif shape == "pills":
+        for y in range(58, 330, 58):
+            draw.rounded_rectangle((610, y, 820, y + 20), radius=10, fill=palette["accent_2"])
+    elif shape == "circles":
+        draw.ellipse((620, 62, 820, 250), fill=palette["accent_2"])
+        draw.ellipse((700, 180, 850, 330), fill=palette["accent"])
+    elif shape == "panel":
+        draw.rounded_rectangle((612, 68, 834, 304), radius=28, outline=palette["accent"], width=6)
+        draw.line((640, 104, 804, 104), fill=palette["accent_2"], width=4)
+        draw.line((640, 146, 782, 146), fill=palette["accent_2"], width=4)
+    else:
+        draw.rectangle((610, 70, 616, 308), fill=palette["accent"])
+        draw.rectangle((640, 70, 646, 250), fill=palette["accent"])
+
+
+def render_wechat_cover(
+    output_path: Path,
+    background_path: Path,
+    title: str,
+    subtitle: str,
+    theme: str = "warm-paper",
+) -> None:
+    palette = get_theme(theme)
+    image = draw_card_base((900, 383), theme, background_path)
     draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((40, 40, 550, 340), radius=24, fill="#FFF8F0")
-    draw.rectangle((610, 70, 616, 308), fill=ORANGE)
-    draw.rectangle((640, 70, 646, 250), fill=ORANGE)
+    draw.rounded_rectangle((40, 40, 550, 340), radius=24, fill=palette["panel"])
+    draw_cover_accents(draw, palette)
 
     brand_font = pick_font(18, bold=True)
     title_font = pick_font(34, bold=True)
     sub_font = pick_font(16)
 
-    draw.text((68, 74), "AI趣创社", font=brand_font, fill=ORANGE)
-    end_y = draw_wrapped(draw, (68, 118), title, title_font, DARK, 440, 44, 3)
-    draw_wrapped(draw, (70, max(end_y + 8, 248)), subtitle, sub_font, DARK, 420, 24, 3)
+    draw.text((68, 74), palette["brand"], font=brand_font, fill=palette["accent"])
+    end_y = draw_wrapped(draw, (68, 118), title, title_font, palette["ink"], 440, 44, 3)
+    draw_wrapped(draw, (70, max(end_y + 8, 248)), subtitle, sub_font, palette["ink"], 420, 24, 3)
     save(image, output_path)
 
 
-def render_wechat_diagram(output_path: Path, title: str, items: Iterable[str], footer: str) -> None:
-    image = Image.new("RGB", (1200, 900), "#FBF6EF")
+def draw_diagram_header(draw: ImageDraw.ImageDraw, palette: dict[str, str]) -> None:
+    shape = palette["shape"]
+    if shape == "grid":
+        draw.rounded_rectangle((70, 52, 1130, 128), radius=20, outline=palette["accent"], width=3)
+    elif shape == "frame":
+        draw.rectangle((76, 58, 1120, 122), outline=palette["accent"], width=4)
+    elif shape == "pills":
+        for x in range(80, 1120, 80):
+            draw.line((x, 54, x, 122), fill=palette["accent_2"], width=2)
+    elif shape == "circles":
+        draw.ellipse((930, 36, 1120, 190), fill=palette["accent_2"])
+    elif shape == "panel":
+        draw.rounded_rectangle((76, 58, 1120, 122), radius=16, fill=palette["panel"], outline=palette["accent_2"], width=3)
+
+
+def render_wechat_diagram(
+    output_path: Path,
+    title: str,
+    items: Iterable[str],
+    footer: str,
+    theme: str = "warm-paper",
+) -> None:
+    palette = get_theme(theme)
+    image = Image.new("RGB", (1200, 900), palette["bg"])
     draw = ImageDraw.Draw(image)
     title_font = pick_font(30, bold=True)
     item_font = pick_font(20)
     footer_font = pick_font(16)
 
-    draw.text((80, 70), title, font=title_font, fill=DARK)
+    draw_diagram_header(draw, palette)
+    draw.text((80, 70), title, font=title_font, fill=palette["ink"])
     top = 180
     for item in items:
-        draw.rounded_rectangle((90, top, 1110, top + 92), radius=18, fill=PANEL, outline=BORDER, width=2)
-        draw.ellipse((120, top + 24, 162, top + 66), fill=ORANGE)
-        draw.text((190, top + 28), item, font=item_font, fill=GREEN)
+        draw.rounded_rectangle((90, top, 1110, top + 92), radius=18, fill=palette["panel"], outline=palette["accent_2"], width=2)
+        if palette["shape"] == "frame":
+            draw.rectangle((120, top + 24, 162, top + 66), fill=palette["accent"])
+        else:
+            draw.ellipse((120, top + 24, 162, top + 66), fill=palette["accent"])
+        draw.text((190, top + 28), item, font=item_font, fill=palette["text"])
         top += 110
-    draw.text((92, 820), footer, font=footer_font, fill=DARK)
+    draw.text((92, 820), footer, font=footer_font, fill=palette["ink"])
     save(image, output_path)
 
 
@@ -121,19 +239,21 @@ def render_xhs_card(
     body_lines: list[str],
     tag_line: str,
     background_path: Path | None = None,
+    theme: str = "warm-paper",
 ) -> None:
-    image = draw_card_base((1242, 1660), background_path)
+    palette = get_theme(theme)
+    image = draw_card_base((1242, 1660), theme, background_path)
     draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((70, 70, 1172, 410), radius=32, fill="#FFF8F0")
-    draw.rounded_rectangle((70, 455, 1172, 1485), radius=32, fill=PANEL)
+    draw.rounded_rectangle((70, 70, 1172, 410), radius=32, fill=palette["panel"])
+    draw.rounded_rectangle((70, 455, 1172, 1485), radius=32, fill=palette["panel"])
 
     brand_font = pick_font(22, bold=True)
     title_font = pick_font(48, bold=True)
     body_font = pick_font(30)
     tag_font = pick_font(22, bold=True)
 
-    draw.text((120, 112), "AI趣创社", font=brand_font, fill=ORANGE)
-    draw_wrapped(draw, (118, 170), title, title_font, DARK, 900, 58, 4)
+    draw.text((120, 112), palette["brand"], font=brand_font, fill=palette["accent"])
+    draw_wrapped(draw, (118, 170), title, title_font, palette["ink"], 900, 58, 4)
 
     y = 540
     for line in body_lines:
@@ -141,14 +261,14 @@ def render_xhs_card(
             y += 24
             continue
         if line.startswith("- "):
-            draw.ellipse((125, y + 14, 139, y + 28), fill=ORANGE)
-            y = draw_wrapped(draw, (160, y), line[2:], body_font, GREEN, 900, 42, 3) + 28
+            draw.ellipse((125, y + 14, 139, y + 28), fill=palette["accent"])
+            y = draw_wrapped(draw, (160, y), line[2:], body_font, palette["text"], 900, 42, 3) + 28
         else:
-            y = draw_wrapped(draw, (120, y), line, body_font, GREEN, 960, 42, 4) + 28
+            y = draw_wrapped(draw, (120, y), line, body_font, palette["text"], 960, 42, 4) + 28
 
     if tag_line:
-        draw.rounded_rectangle((100, 1520, 600, 1590), radius=20, fill=ORANGE)
-        draw.text((126, 1538), tag_line, font=tag_font, fill=PANEL)
+        draw.rounded_rectangle((100, 1520, 600, 1590), radius=20, fill=palette["accent"])
+        draw.text((126, 1538), tag_line, font=tag_font, fill=palette["panel"])
 
     save(image, output_path)
 
@@ -157,6 +277,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--wechat-dir", required=True)
     parser.add_argument("--xhs-dir", required=True)
+    parser.add_argument("--theme", default="warm-paper")
     args = parser.parse_args()
 
     wechat_dir = Path(args.wechat_dir)
@@ -167,116 +288,19 @@ def main() -> int:
     render_wechat_cover(
         wechat_dir / "images" / "01_公众号封面.png",
         wechat_base,
-        "一套适合普通创作者的AI内容生产SOP",
+        "一套适合普通创作者的 AI 内容生产 SOP",
         "从选题到发布，怎么真正跑顺",
+        theme=args.theme,
     )
 
-    wechat_cards = [
-        ("02_为什么用了AI还是没提效.png", "为什么很多人用了 AI 还是没提效", [
-            "今天写标题，明天换工具，后天又重写一遍",
-            "看起来一直很忙，其实没有固定流程",
-            "真正缺的不是工具，而是能反复跑起来的 SOP",
-        ], "先固定步骤，再让 AI 进入步骤里承担角色。"),
-        ("03_这套SOP适合哪些人.png", "这套 SOP 最适合哪类创作者", [
-            "一个人同时做小红书、公众号、朋友圈等图文内容",
-            "每次写内容都像临场发挥，结构和节奏不稳定",
-            "想用 AI 提速，但又不想把内容写成机器味",
-        ], "缺的不是更多工具，而是一条能反复跑顺的流程。"),
-        ("04_AI和人分别负责什么.png", "AI 和人，分别该负责什么", [
-            "AI 负责：整理、扩展、提速、改写",
-            "你负责：方向、取舍、观点、结论",
-            "判断不外包，内容才不会越来越像机器",
-        ], "AI 是提速器，不是判断替代者。"),
-        ("05_六步SOP总览.png", "基础版内容生产 SOP：6 步跑顺", [
-            "1. 拆受众问题",
-            "2. 扩选题角度",
-            "3. 搭文章提纲",
-            "4. 写初稿并补表达",
-            "5. 改成平台版本",
-            "6. 补承接动作后发布",
-        ], "先把顺序固定，再逐步模板化。"),
-        ("06_前3步先跑顺.png", "前 3 步先解决方向和结构", [
-            "先拆清楚：写给谁，他们最常卡在哪",
-            "围绕一个主题先铺出 5 到 10 个选题角度",
-            "先定结论和提纲，再让 AI 进入写作阶段",
-        ], "前 3 步做扎实，后面才不会一直返工。"),
-        ("07_后3步决定能不能稳定.png", "后 3 步决定能不能长期稳定产出", [
-            "初稿出来后，自己补判断，不把观点外包",
-            "同一套主逻辑，再改成小红书和公众号版本",
-            "发布前补 CTA，让内容进入承接和转化",
-        ], "平台不同，表达不同，但底层逻辑可以共用。"),
-        ("08_发布前承接动作清单.png", "发布前一定补上的 3 个承接动作", [
-            "想清楚这篇内容希望读者下一步做什么",
-            "在评论、私信、公众号沉淀里只选一个主 CTA",
-            "检查 CTA 和正文是不是自然衔接，而不是硬塞",
-        ], "没有承接动作，内容很容易变成看过就算。"),
-    ]
-    for filename, title, items, footer in wechat_cards:
-        render_wechat_diagram(wechat_dir / "images" / filename, title, items, footer)
-
-    xhs_cards = [
-        ("01_首图.png", "内容创作者先别急着学更多 AI", [
-            "先搞懂这一条图文流程。",
-            "流程跑顺了，产出才会稳。",
-            "",
-            "- 不是工具不够",
-            "- 是步骤没固定",
-        ], "先搭流程", xhs_base),
-        ("02_问题页.png", "为什么你学了 AI 还是不稳定", [
-            "不是你不努力。",
-            "而是你每天都在临场发挥。",
-            "",
-            "- 想选题靠现想",
-            "- 写结构靠感觉",
-            "- 改平台版本靠重写",
-        ], "问题先看清", None),
-        ("03_流程总览.png", "先看结论：这 6 步最值得先固定", [
-            "- 拆痛点",
-            "- 扩选题",
-            "- 搭提纲",
-            "- 写初稿",
-            "- 改平台版",
-            "- 发前检查",
-        ], "6步跑顺", None),
-        ("04_前三步.png", "前 2 步先解决选题和方向", [
-            "1. 先拆受众痛点",
-            "2. 再铺 5 到 10 个选题角度",
-            "",
-            "不要一上来就问 AI：",
-            "“帮我写一篇。”",
-        ], "先定方向", None),
-        ("05_后三步.png", "第 3 步最关键：先搭提纲", [
-            "先定结论。",
-            "再列 3 到 5 个要点。",
-            "最后才写正文。",
-            "",
-            "提纲稳了，全文才不会散。",
-        ], "先提纲", None),
-        ("06_关键提醒.png", "第 4 步和第 5 步：让 AI 提速，不替你判断", [
-            "4. 初稿出来后，自己补判断",
-            "5. 再改成不同平台版本",
-            "",
-            "- 小红书更短更快",
-            "- 公众号更完整更解释",
-        ], "别外包判断", None),
-        ("07_CTA页.png", "第 6 步：发前一定补 CTA", [
-            "发之前先想清楚：",
-            "你是要收藏、评论，",
-            "还是私信领资料？",
-            "",
-            "一篇内容只留一个主动作。",
-        ], "发前检查", None),
-        ("08_最关键提醒.png", "最关键的不是 AI 帮你写完", [
-            "- AI 负责提速",
-            "- 你负责方向",
-            "- 你负责最终判断",
-            "",
-            "想看基础版清单，私信我 `流程`。",
-        ], "私信我 流程", None),
-    ]
-    for filename, title, body, tag, background in xhs_cards:
-        render_xhs_card(xhs_dir / "images" / filename, title, body, tag, background)
-
+    render_xhs_card(
+        xhs_dir / "images" / "01_首图.png",
+        "内容创作者先别急着学更多 AI",
+        ["先搞懂这一条图文流程。", "流程跑顺了，产出才会稳。", "", "- 不是工具不够", "- 是步骤没固定"],
+        "先搭流程",
+        xhs_base,
+        theme=args.theme,
+    )
     return 0
 
 

@@ -12,3 +12,4 @@ __pycache__/
 *.pyc
 .tmp_*.json
 *_tmp.txt
+**/.codex_wechat/

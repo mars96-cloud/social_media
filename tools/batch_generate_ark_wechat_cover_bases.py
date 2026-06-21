@@ -83,6 +83,8 @@ def run_ark(prompt: str, out_dir: Path) -> Path:
     command = [
         "python",
         str(ARK_SCRIPT),
+        "--config",
+        str(Path.home() / ".codex" / "apis.json"),
         "generate",
         "--prompt",
         prompt,
@@ -93,7 +95,14 @@ def run_ark(prompt: str, out_dir: Path) -> Path:
         "--filename-prefix",
         "ark-cover",
     ]
-    result = subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8")
+    result = subprocess.run(command, check=False, capture_output=True, text=True, encoding="utf-8")
+    if result.returncode != 0:
+        raise RuntimeError(
+            "Ark generate failed\n"
+            f"command: {' '.join(command)}\n"
+            f"stdout:\n{result.stdout}\n"
+            f"stderr:\n{result.stderr}"
+        )
     payload = json.loads(result.stdout)
     saved = payload.get("saved") or []
     if saved:
