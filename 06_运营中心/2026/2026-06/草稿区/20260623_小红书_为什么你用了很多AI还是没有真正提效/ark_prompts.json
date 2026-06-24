@@ -1,0 +1,45 @@
+{
+  "provider": "ark-image-generation",
+  "status": "prompt_ready",
+  "blocked_reason": "",
+  "suggested_style_family": "muted-warm",
+  "canvas": "vertical knowledge-card",
+  "shared_negative_prompt": "no watermark, no logo, no dense tiny text, no realistic app interface, no blurry details, no messy collage, no stock photo look",
+  "pages": [
+    {
+      "file": "01_首图.png",
+      "goal": "先打中情绪：学了很多AI还是没提效",
+      "prompt": "Warm muted Xiaohongshu knowledge-card illustration, cute creator desk crowded with too many AI app cards and tangled arrows, one confused chubby robot overwhelmed by messy tools, caramel cream paper tones, restrained warm light, strong visual metaphor of busy but ineffective, eye-catching, no text, no watermark"
+    },
+    {
+      "file": "02_共鸣页.png",
+      "goal": "做出工具越来越多但事情还是很乱的感受",
+      "prompt": "Warm editorial Xiaohongshu infographic illustration, creator surrounded by tabs, sticky notes, clocks, unfinished drafts and tangled task lines, cute cartoon robot helping but still confused, muted caramel and sand palette, practical and relatable, visual metaphor for more tools but more chaos, no text, no watermark"
+    },
+    {
+      "file": "03_核心判断.png",
+      "goal": "强调不是在用工作流，而是在给混乱打补丁",
+      "prompt": "Warm Xiaohongshu knowledge-card illustration, broken messy workflow path covered with tape patches and bandages, next to one clean glowing path, cute robot pointing at the contrast, muted warm editorial style, clever metaphor, collectible educational feel, no text, no watermark"
+    },
+    {
+      "file": "04_误区一.png",
+      "goal": "表现只替代零碎动作，没有重做整条流程",
+      "prompt": "Warm practical infographic illustration, many tiny task boxes each polished separately while the whole pipeline remains tangled, cute icons, arrows and split paths, soft caramel cream tones, Xiaohongshu card composition, visual metaphor for local fixes without system redesign, no text, no watermark"
+    },
+    {
+      "file": "05_误区二.png",
+      "goal": "表现想让AI一次给最终稿",
+      "prompt": "Cute warm editorial illustration, one giant magic final-result button tempting a creator, contrasted with a calm step-by-step ladder of thinking cards, playful but sharp anti-shortcut metaphor, muted warm palette, Xiaohongshu educational card, no text, no watermark"
+    },
+    {
+      "file": "06_误区三.png",
+      "goal": "表现没有模板沉淀，每次都像第一次用AI",
+      "prompt": "Warm cute Xiaohongshu card illustration, repeated blank pages, restart symbols and scattered prompts versus one tidy reusable template binder and SOP board, restrained caramel paper tones, practical and memorable, visual metaphor for no template accumulation, no text, no watermark"
+    },
+    {
+      "file": "07_评论钩子卡.png",
+      "goal": "收束为流程+模板+AI协作，并引导评论",
+      "prompt": "Warm cute Xiaohongshu discussion illustration, cozy creator desk with workflow cards, template binder, chat bubbles and heart icons, friendly chubby robot inviting discussion, restrained caramel cream palette, playful but polished, visual metaphor of sharing stuck points and practical tips, no text, no watermark"
+    }
+  ]
+}

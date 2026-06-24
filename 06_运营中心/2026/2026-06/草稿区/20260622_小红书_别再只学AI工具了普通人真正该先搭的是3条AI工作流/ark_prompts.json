@@ -1,0 +1,51 @@
+{
+  "provider": "ark-image-generation",
+  "status": "prompt_ready_generation_blocked",
+  "blocked_reason": "Agent Plan route is reachable, but no confirmed plan-compatible image model id is available in the current environment.",
+  "suggested_style_family": "blueprint",
+  "canvas": "vertical knowledge-card",
+  "shared_negative_prompt": "no watermark, no logo, no UI screenshot, no realistic app interface, no dense tiny text, no blurry details, no messy collage, no stock photo look",
+  "pages": [
+    {
+      "file": "01_首图.png",
+      "goal": "让用户停下，先打出核心判断",
+      "prompt": "Chinese Xiaohongshu knowledge-card cover, blueprint style, vertical editorial infographic, one bold headline area, strong focal composition, three glowing workflow lanes cutting through scattered AI tool icons, clean cream background with blue and orange accents, hand-labeled sticky-note feel, high contrast, highly save-worthy, clear hierarchy, no text, no watermark"
+    },
+    {
+      "file": "02_误区页.png",
+      "goal": "表现一直换工具但没有固定步骤",
+      "prompt": "Chinese social-media knowledge card, warm notes plus blueprint hybrid, chaotic floating tool icons on one side and one incomplete workflow path on the other, mistake versus structure contrast, cream background, blue green orange labels, handwritten sticker feel, simple icon-based infographic composition, no text, no watermark"
+    },
+    {
+      "file": "03_总览页.png",
+      "goal": "展示三条最值得先搭的流程总览",
+      "prompt": "Chinese Xiaohongshu infographic card, blueprint structure page, three clear modules for content production, information organization, and conversion workflow, neat arrows and blocks, clean vertical layout, light blue and cream palette with orange highlights, crisp editorial knowledge-card style, no text, no watermark"
+    },
+    {
+      "file": "04_内容生产.png",
+      "goal": "展示内容生产流程的5步结构",
+      "prompt": "Chinese knowledge-card illustration, vertical process card, one central path with five simple steps, content workflow feeling, icons for pain point, topic, outline, draft, platform adaptation, high readability, blueprint blue main color, warm small accent labels, no text, no watermark"
+    },
+    {
+      "file": "05_信息整理.png",
+      "goal": "展示灵感和评论如何沉淀成素材库",
+      "prompt": "Chinese Xiaohongshu card illustration, reusable asset library metaphor, scattered notes, screenshots, comment bubbles flowing into neat folders and cards, warm-notes style, cream background, mint and orange accents, practical, organized, visually satisfying, no text, no watermark"
+    },
+    {
+      "file": "06_承接转化.png",
+      "goal": "展示内容发出后的承接动作",
+      "prompt": "Chinese editorial infographic card, post-to-action workflow, content card leading to three simple action nodes like save, comment, follow, clean arrows and action icons, blue orange contrast, vertical card composition, clear social-media conversion metaphor, no text, no watermark"
+    },
+    {
+      "file": "07_先做哪条.png",
+      "goal": "强调先从高频任务开始",
+      "prompt": "Chinese knowledge-card page, decision card style, one highlighted path among three options, high-frequency task emphasized with spotlight effect, blueprint style with cream background and orange attention marks, simple, clear, practical, no text, no watermark"
+    },
+    {
+      "file": "08_收口页.png",
+      "goal": "强化流程比工具值钱",
+      "prompt": "Chinese Xiaohongshu conclusion card, one clear workflow path remaining while extra tool icons fade into the background, strong final judgment mood, clean composition, cream background, blue dominant with orange emphasis, collectible knowledge-card aesthetic, no text, no watermark"
+    }
+  ]
+}
+

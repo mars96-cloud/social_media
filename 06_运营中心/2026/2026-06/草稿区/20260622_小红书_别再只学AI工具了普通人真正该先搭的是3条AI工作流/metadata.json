@@ -1,0 +1,43 @@
+{
+  "platform": "xiaohongshu",
+  "date": "20260622",
+  "status": "draft_local",
+  "type": "image_post",
+  "title": "别再只学 AI 工具了，普通人先搭这 3 条工作流",
+  "title_candidates": [
+    "别再只学 AI 工具了，普通人先搭这 3 条工作流",
+    "普通人做 AI，最该先跑顺的 3 条流程",
+    "学了很多 AI 还没结果？先把这 3 条流程搭起来"
+  ],
+  "body_file": "草稿箱正文.txt",
+  "cover_hook": "先搭流程",
+  "cta": "关注我，后续日常推送与直播带你手把手开发自己的工作流与智能体。",
+  "ark_generation": {
+    "provider": "ark-image-generation",
+    "route": "agent-plan",
+    "status": "blocked_no_confirmed_plan_image_model",
+    "last_tested_model": "doubao-seedream-5-0-260128"
+  },
+  "tags": [
+    "AI工作流",
+    "AI提效",
+    "内容创作",
+    "自媒体运营",
+    "普通人做AI"
+  ],
+  "image_files": [
+    "01_首图.png",
+    "02_误区页.png",
+    "03_总览页.png",
+    "04_内容生产.png",
+    "05_信息整理.png",
+    "06_承接转化.png",
+    "07_先做哪条.png",
+    "08_收口页.png"
+  ],
+  "inspiration_sources": [
+    "20260622_公众号_别再只学AI工具了普通人真正该先搭的是3条AI工作流",
+    "06_运营中心/参考/小红书"
+  ],
+  "prompt_file": "ark_prompts.json"
+}

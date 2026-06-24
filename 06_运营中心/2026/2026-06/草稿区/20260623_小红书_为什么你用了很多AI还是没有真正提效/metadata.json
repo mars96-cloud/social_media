@@ -1,0 +1,43 @@
+{
+  "platform": "xiaohongshu",
+  "date": "20260623",
+  "status": "draft_local",
+  "type": "image_post",
+  "title": "为什么你用了很多 AI，还是没有真正提效",
+  "title_candidates": [
+    "为什么你用了很多 AI，还是没有真正提效",
+    "学了很多 AI 还没省时间，问题通常不在工具",
+    "不是 AI 不行，是你一直在错的地方用力"
+  ],
+  "body_file": "草稿箱正文.txt",
+  "cover_hook": "先别换工具",
+  "cta": "关注我，后续日常推送与直播带你手把手开发自己的工作流与智能体。",
+  "ark_generation": {
+    "provider": "ark-image-generation",
+    "route": "agent-plan",
+    "status": "ready_direct_seedream",
+    "model": "doubao-seedream-5.0-lite",
+    "endpoint": "https://ark.cn-beijing.volces.com/api/plan/v3/images/generations"
+  },
+  "tags": [
+    "AI提效",
+    "AI工具",
+    "工作流",
+    "内容创作",
+    "效率提升"
+  ],
+  "image_files": [
+    "01_首图.png",
+    "02_共鸣页.png",
+    "03_核心判断.png",
+    "04_误区一.png",
+    "05_误区二.png",
+    "06_误区三.png",
+    "07_评论钩子卡.png"
+  ],
+  "inspiration_sources": [
+    "20260623_公众号_为什么你用了很多AI还是没有真正提效",
+    "06_运营中心/参考/小红书"
+  ],
+  "prompt_file": "ark_prompts.json"
+}
