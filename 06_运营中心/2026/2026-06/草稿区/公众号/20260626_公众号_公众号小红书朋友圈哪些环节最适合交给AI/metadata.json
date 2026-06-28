@@ -1,0 +1,35 @@
+{
+  "platform": "wechat",
+  "title": "﻿公众号、小红书、朋友圈，哪些环节最适合交给 AI",
+  "digest": "同样是做内容，公众号、小红书、朋友圈的表达方式完全不一样。很多人最常问的不是“AI 能不能帮忙”，而是“到底哪一段最适合交给 AI，哪一段必须自己来”。这篇文章我就想把这个问题拆清楚，避免你把该自己判断的地方外包出去，也",
+  "source_article": "",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_AI更适合做重复动作.png",
+    "images/03_公众号最适合交给AI的环节.png",
+    "images/04_小红书最适合交给AI的环节.png",
+    "images/05_朋友圈最适合交给AI的环节.png",
+    "images/06_一套主逻辑多平台复用.png"
+  ],
+  "status": "draft-ready",
+  "legacy": {
+    "title": "公众号、小红书、朋友圈，哪些环节最适合交给 AI",
+    "date": "20260626",
+    "cta_keyword": "SOP",
+    "cta_resource": "《多平台内容提效检查表》",
+    "image_files": [
+      "01_公众号封面.png",
+      "02_AI更适合做重复动作.png",
+      "03_公众号最适合交给AI的环节.png",
+      "04_小红书最适合交给AI的环节.png",
+      "05_朋友圈最适合交给AI的环节.png",
+      "06_一套主逻辑多平台复用.png"
+    ],
+    "theme": "slate-pro",
+    "cover_hook": "别全交AI",
+    "cover_kicker": "只放大这几步",
+    "cover_variant": "burst-left",
+    "cover_prompt": "Chinese social-media cover background, three platform panels and several workflow steps, some glowing as delegated to AI and some locked as human judgment, sleek teal editorial style, strong visual hierarchy, no text, no watermark.",
+    "cover_image": "01_公众号封面.png"
+  }
+}

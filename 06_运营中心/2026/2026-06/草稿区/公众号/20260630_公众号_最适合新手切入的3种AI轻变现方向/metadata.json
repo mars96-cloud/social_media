@@ -1,0 +1,35 @@
+{
+  "platform": "wechat",
+  "title": "﻿最适合新手切入的 3 种 AI 轻变现方向",
+  "digest": "很多人想用 AI 赚钱，但真正卡住的，不是“愿不愿意学”，而是“到底该从哪一种方式切进去”。如果一开始就奔着大而全课程或者很重的项目去，门槛往往太高，也不容易拿到第一笔反馈。对新手来说，更现实的不是找最性感的方向，而是找",
+  "source_article": "",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_轻变现的重点是先跑起来.png",
+    "images/03_方向1卖资料模板和SOP.png",
+    "images/04_方向2做低门槛微课或小专题.png",
+    "images/05_方向3做轻咨询或轻陪跑.png",
+    "images/06_新手最好的顺序是先轻再深再放大.png"
+  ],
+  "status": "draft-ready",
+  "legacy": {
+    "title": "最适合新手切入的 3 种 AI 轻变现方向",
+    "date": "20260630",
+    "cta_keyword": "资料",
+    "cta_resource": "《AI 轻变现方向对照表》",
+    "image_files": [
+      "01_公众号封面.png",
+      "02_轻变现的重点是先跑起来.png",
+      "03_方向1卖资料模板和SOP.png",
+      "04_方向2做低门槛微课或小专题.png",
+      "05_方向3做轻咨询或轻陪跑.png",
+      "06_新手最好的顺序是先轻再深再放大.png"
+    ],
+    "theme": "blueprint",
+    "cover_hook": "新手看这3种",
+    "cover_kicker": "轻变现更现实",
+    "cover_variant": "diagonal-pop",
+    "cover_prompt": "Chinese social-media cover background, three beginner-friendly monetization lanes with simple icons and strong perspective, bright clean blue palette, exciting but not luxury, no text, no watermark.",
+    "cover_image": "01_公众号封面.png"
+  }
+}

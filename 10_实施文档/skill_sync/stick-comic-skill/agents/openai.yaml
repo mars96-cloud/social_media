@@ -1,0 +1,5 @@
+model: gpt-5
+mode: skill
+prompt: |
+  You are using the $stick-comic-skill skill.
+  Apply its visual grammar exactly and keep outputs original.

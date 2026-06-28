@@ -1,0 +1,18 @@
+{
+  "platform": "wechat",
+  "title": "别急着做 agent，先把你手上的重复动作抓出来",
+  "digest": "Agent 真正有价值的前提，是你已经有稳定、重复、可描述的动作；否则它只是在自动化混乱。很多普通创作者、个体经营者和轻创业者学 AI 的时候，最容易把注意力放在工具和技巧上。但真正影响结果的，往往不是你又多知道了一个工",
+  "source_article": "06_运营中心/2026/2026-07/文章总览/2026-07-09/20260709_文章总览_别急着做agent先把你手上的重复动作抓出来.md",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_正文配图_为什么很多人一听agent就兴奋.png",
+    "images/03_正文配图_什么时候agent才有意义.png",
+    "images/04_正文配图_重复动作都没固定agent也帮不.png",
+    "images/05_正文配图_普通人现在更该先做的3件事.png",
+    "images/06_正文配图_agent是下一阶段升级不是第一.png"
+  ],
+  "status": "draft-ready",
+  "theme": "newsroom",
+  "cover_hook": "先别急",
+  "cover_kicker": "先把流程搭对"
+}

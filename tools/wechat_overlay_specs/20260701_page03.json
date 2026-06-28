@@ -1,0 +1,42 @@
+{
+  "patches": [
+    { "x": 460, "y": 90, "width": 1490, "height": 160, "color": "#FFFFFF" },
+    { "x": 100, "y": 350, "width": 520, "height": 260, "color": "#FFFFFF", "radius": 90 },
+    { "x": 1440, "y": 650, "width": 500, "height": 170, "color": "#FFFFFF", "radius": 90 }
+  ],
+  "texts": [
+    {
+      "x": 500,
+      "y": 105,
+      "width": 1410,
+      "text": "误解：AI 会一直替你赚钱？",
+      "font_size": 66,
+      "max_chars": 16,
+      "line_gap": 8,
+      "align": "center",
+      "text_color": "#111111"
+    },
+    {
+      "x": 140,
+      "y": 395,
+      "width": 440,
+      "text": "它只是把流程提速",
+      "font_size": 48,
+      "max_chars": 8,
+      "line_gap": 8,
+      "align": "center",
+      "text_color": "#111111"
+    },
+    {
+      "x": 1480,
+      "y": 690,
+      "width": 420,
+      "text": "核心还是你会不会用",
+      "font_size": 44,
+      "max_chars": 9,
+      "line_gap": 8,
+      "align": "center",
+      "text_color": "#111111"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "title": "如果你想开始做智能体，先从这条半自动工作流起步",
   "date": "20260710",
-  "theme": "slate-pro",
+  "theme": "mint-grid",
   "cta": "关注我，后续日常推送与直播带你手把手开发自己的工作流与智能体。",
   "image_files": [
     "01_公众号封面.png",
@@ -10,10 +10,5 @@
     "04_半自动工作流里哪些动作必须人工判断.png",
     "05_半自动流程什么时候适合升级.png",
     "06_第一条流程跑顺后最该做什么.png"
-  ],
-  "cover_hook": "先做半自动",
-  "cover_kicker": "第一条就做这个",
-  "cover_variant": "burst-left",
-  "cover_prompt": "Chinese social-media cover background, semi-automatic workflow console with one human hand and one glowing AI assist hand, clear first-step feeling, sleek teal style, dramatic, no text, no watermark.",
-  "cover_image": "01_公众号封面.png"
+  ]
 }

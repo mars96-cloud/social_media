@@ -25,6 +25,7 @@ foreach ($required in @($payloadPath, $uploadListPath, $renderPath)) {
 
 $payload = Get-Content -Raw -Encoding UTF8 -LiteralPath $payloadPath | ConvertFrom-Json
 $uploadList = Get-Content -Raw -Encoding UTF8 -LiteralPath $uploadListPath | ConvertFrom-Json
+$coverFileName = if ($payload.cover_path) { [System.IO.Path]::GetFileName([string]$payload.cover_path) } else { "" }
 
 function Invoke-AgentBrowser {
     param(
@@ -200,6 +201,7 @@ Wait-Millis -Ms 1500
 
 $selectCoverScript = @"
 (() => {
+  const targetName = $(ConvertTo-Json -Compress -InputObject $coverFileName);
   const candidates = Array.from(document.querySelectorAll('*'))
     .map(el => ({
       el,
@@ -208,7 +210,8 @@ $selectCoverScript = @"
     }))
     .filter(x => x.txt.endsWith('.png') && !x.txt.includes('\n') && x.rect.width > 0 && x.rect.height > 0)
     .sort((a, b) => (a.rect.top - b.rect.top) || (a.rect.left - b.rect.left));
-  const target = candidates[0]?.el;
+  const exact = candidates.find(x => x.txt === targetName);
+  const target = (exact || candidates[0])?.el;
   if (!target) throw new Error('cover image item not found in recent list');
   target.click();
   return (target.innerText || '').trim();

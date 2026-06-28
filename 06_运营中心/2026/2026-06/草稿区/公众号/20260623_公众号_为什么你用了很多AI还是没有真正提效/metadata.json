@@ -1,0 +1,35 @@
+{
+  "platform": "wechat",
+  "title": "﻿为什么你用了很多 AI，还是没有真正提效",
+  "digest": "很多人现在的问题，不是没用过 AI，而是已经用了不少，却还是觉得很忙。标题让 AI 想了，文案让 AI 改了，图也试着让 AI 生成了，结果效率并没有明显提高。如果你也有这种感受，这篇文章你要先看明白一点：提效不是“多用",
+  "source_article": "",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_不是工具不行而是路径没定.png",
+    "images/03_第一个坑每一步都临场发挥.png",
+    "images/04_第二个坑把判断外包给AI.png",
+    "images/05_第三个坑没有模板化.png",
+    "images/06_真正提效看哪三个层面.png"
+  ],
+  "status": "draft-ready",
+  "legacy": {
+    "title": "为什么你用了很多 AI，还是没有真正提效",
+    "date": "20260623",
+    "cta_keyword": "SOP",
+    "cta_resource": "《AI 内容提效 SOP 检查清单》",
+    "image_files": [
+      "01_公众号封面.png",
+      "02_不是工具不行而是路径没定.png",
+      "03_第一个坑每一步都临场发挥.png",
+      "04_第二个坑把判断外包给AI.png",
+      "05_第三个坑没有模板化.png",
+      "06_真正提效看哪三个层面.png"
+    ],
+    "theme": "newsroom",
+    "cover_hook": "提效没来",
+    "cover_kicker": "问题不在工具",
+    "cover_variant": "dark-card",
+    "cover_prompt": "Chinese social-media cover background, overwhelmed creator at desk with many AI windows but tangled cables and clocks, one bright efficiency path missing, cinematic newsroom mood, dramatic, no text, no watermark.",
+    "cover_image": "01_公众号封面.png"
+  }
+}

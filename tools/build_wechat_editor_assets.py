@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
-PREPARE_SCRIPT = Path(r"C:\Users\Administrator\.codex\skills\social-push\scripts\prepare_wechat_article.py")
+PREPARE_SCRIPT = Path(r"C:\Users\Administrator\.codex\skills\wechat-push-skill\scripts\prepare_wechat_article.py")
 
 
 def run_prepare(folder: Path) -> dict:
@@ -144,7 +144,11 @@ def main() -> None:
 
     payload = run_prepare(folder)
     image_paths = [block["path"] for block in payload["blocks"] if block["type"] == "image"]
-    upload_paths = list(reversed(image_paths))
+    cover_path = payload.get("cover_path")
+    body_upload_paths = [p for p in image_paths if p != cover_path]
+    upload_paths = list(reversed(body_upload_paths))
+    if cover_path:
+        upload_paths.append(cover_path)
 
     (out_dir / "payload.json").write_text(
         json.dumps(payload, ensure_ascii=True, indent=2),

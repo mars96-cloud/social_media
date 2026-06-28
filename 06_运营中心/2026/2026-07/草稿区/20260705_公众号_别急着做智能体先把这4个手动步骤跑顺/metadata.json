@@ -10,10 +10,5 @@
     "04_做智能体前为什么要先固定输入和判断点.png",
     "05_先半自动再逐步自动化才更稳.png",
     "06_什么时候你才真的适合开始做智能体.png"
-  ],
-  "cover_hook": "别急做智能体",
-  "cover_kicker": "先跑顺4步",
-  "cover_variant": "warning-bar",
-  "cover_prompt": "Chinese social-media cover background, four manual steps lit on a path before a giant robot gate, exaggerated suspense and orange highlights, no text, no watermark.",
-  "cover_image": "01_公众号封面.png"
+  ]
 }

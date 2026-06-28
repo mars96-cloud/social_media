@@ -1,0 +1,35 @@
+{
+  "platform": "wechat",
+  "title": "别再只学 AI 工具了，普通人真正该先搭的是 3 条 AI 工作流",
+  "digest": "很多人问我，普通人到底该先学哪个 AI 工具。我的答案通常都不是“先学这个工具”，而是“先搭这 3 条工作流”。因为对普通人来说，能不能稳定出结果，取决于你能不能把 AI 放进固定路径里，而不是你收藏了多少新工具。",
+  "source_article": "",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_为什么不该把重点只放在工具上.png",
+    "images/03_第一条先搭内容生产工作流.png",
+    "images/04_第二条信息整理工作流.png",
+    "images/05_第三条承接转化工作流.png",
+    "images/06_哪条工作流该先开始.png"
+  ],
+  "status": "draft-ready",
+  "legacy": {
+    "title": "别再只学 AI 工具了，普通人真正该先搭的是 3 条 AI 工作流",
+    "date": "20260622",
+    "cta_keyword": "流程",
+    "cta_resource": "《普通人最值得先搭的 5 条 AI 工作流》清单",
+    "image_files": [
+      "01_公众号封面.png",
+      "02_为什么不该把重点只放在工具上.png",
+      "03_第一条先搭内容生产工作流.png",
+      "04_第二条信息整理工作流.png",
+      "05_第三条承接转化工作流.png",
+      "06_哪条工作流该先开始.png"
+    ],
+    "theme": "blueprint",
+    "cover_hook": "先别乱学",
+    "cover_kicker": "真正该搭流程",
+    "cover_variant": "burst-left",
+    "cover_prompt": "Chinese social-media cover background, three glowing workflow lanes cutting through a messy sea of floating AI app icons, bright blue tech style, dynamic perspective, punchy and dramatic, no text, no watermark.",
+    "cover_image": "01_公众号封面.png"
+  }
+}

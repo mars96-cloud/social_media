@@ -1,0 +1,30 @@
+{
+  "patches": [
+    { "x": 520, "y": 95, "width": 980, "height": 120, "color": "#FFFFFF" },
+    { "x": 670, "y": 940, "width": 690, "height": 120, "color": "#FFFFFF" }
+  ],
+  "texts": [
+    {
+      "x": 560,
+      "y": 110,
+      "width": 900,
+      "text": "真正的 Agent 看它会不会推进",
+      "font_size": 58,
+      "max_chars": 16,
+      "line_gap": 8,
+      "align": "center",
+      "text_color": "#111111"
+    },
+    {
+      "x": 705,
+      "y": 955,
+      "width": 620,
+      "text": "会催进度 会接下一步",
+      "font_size": 50,
+      "max_chars": 10,
+      "line_gap": 8,
+      "align": "center",
+      "text_color": "#111111"
+    }
+  ]
+}

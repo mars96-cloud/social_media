@@ -1,0 +1,35 @@
+{
+  "platform": "wechat",
+  "title": "﻿内容创作者最值得先学的 1 条 AI 图文生产流程",
+  "digest": "很多内容创作者最焦虑的，不是不会用 AI，而是会一点，但每次做图文还是很乱。",
+  "source_article": "",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_为什么先学图文流程.png",
+    "images/03_图文流程六步总览.png",
+    "images/04_前三步决定是否跑偏.png",
+    "images/05_后3步决定能不能成品.png",
+    "images/06_先跑顺再放大.png"
+  ],
+  "status": "draft-ready",
+  "legacy": {
+    "title": "内容创作者最值得先学的 1 条 AI 图文生产流程",
+    "date": "20260624",
+    "cta_keyword": "流程",
+    "cta_resource": "《AI 图文生产流程表》",
+    "image_files": [
+      "01_公众号封面.png",
+      "02_为什么先学图文流程.png",
+      "03_图文流程六步总览.png",
+      "04_前三步决定是否跑偏.png",
+      "05_后3步决定能不能成品.png",
+      "06_先跑顺再放大.png"
+    ],
+    "theme": "mint-grid",
+    "cover_hook": "先跑图文流",
+    "cover_kicker": "这条最值得学",
+    "cover_variant": "spotlight-right",
+    "cover_prompt": "Chinese social-media cover background, creator workflow with phone screen, article card, image card connected into one clear production line, fresh mint palette, sharp focal object, high-contrast, no text, no watermark.",
+    "cover_image": "01_公众号封面.png"
+  }
+}

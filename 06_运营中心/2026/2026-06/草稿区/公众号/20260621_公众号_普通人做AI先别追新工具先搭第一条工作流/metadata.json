@@ -1,0 +1,35 @@
+{
+  "platform": "wechat",
+  "title": "普通人做 AI，不要先追新工具，先搭自己的第一条工作流",
+  "digest": "很多人一开始学 AI，最兴奋的事情就是收藏新工具。但真正让普通人跑出结果的，往往不是你又多会了一个新模型，而是你有没有一条能反复跑起来的工作流。这篇文章我想讲清楚的，不是“现在最火的 AI 工具是什么”，而是普通人为什么",
+  "source_article": "",
+  "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
+  "body_image_paths": [
+    "images/02_为什么学了很多AI还是没跑起来.png",
+    "images/03_第一条工作流不要从复杂开始.png",
+    "images/04_最适合先搭的三类工作流.png",
+    "images/05_第一条工作流的四步搭建法.png",
+    "images/06_工作流跑完后要复盘什么.png"
+  ],
+  "status": "draft-ready",
+  "legacy": {
+    "title": "普通人做 AI，不要先追新工具，先搭自己的第一条工作流",
+    "date": "20260621",
+    "cta_keyword": "流程",
+    "cta_resource": "《普通人最值得先搭的 5 条 AI 工作流》清单",
+    "image_files": [
+      "01_公众号封面.png",
+      "02_为什么学了很多AI还是没跑起来.png",
+      "03_第一条工作流不要从复杂开始.png",
+      "04_最适合先搭的三类工作流.png",
+      "05_第一条工作流的四步搭建法.png",
+      "06_工作流跑完后要复盘什么.png"
+    ],
+    "theme": "warm-paper",
+    "cover_hook": "先搭系统",
+    "cover_kicker": "别先追新工具",
+    "cover_variant": "warning-bar",
+    "cover_prompt": "Chinese social-media cover background, exaggerated contrast between chaotic tool icons and one clear workflow path, cinematic warm paper and orange palette, strong focal object, bold light and shadow, high click-through energy, no text, no watermark.",
+    "cover_image": "01_公众号封面.png"
+  }
+}
