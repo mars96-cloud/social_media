@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
-PREPARE_SCRIPT = Path(r"C:\Users\Administrator\.codex\skills\wechat-push-skill\scripts\prepare_wechat_article.py")
+PREPARE_SCRIPT = Path(r"C:\Users\adv\.codex\skills\wechat-push-skill\scripts\prepare_wechat_article.py")
 
 
 def run_prepare(folder: Path) -> dict:
@@ -21,8 +21,33 @@ def run_prepare(folder: Path) -> dict:
     return json.loads(result.stdout)
 
 
+def prefer_horizontal_cover(folder: Path, payload: dict) -> dict:
+    images_dir = folder / "images"
+    priority_names = [
+        "01_公众号封面_标题版_2.35比1.png",
+        "01_公众号封面_标题版_2.35比.png",
+        "01_公众号封面_标题版_2.35比1.jpg",
+        "01_公众号封面_标题版_2.35比.jpg",
+        "01_公众号封面_标题版_2.35比1.jpeg",
+        "01_公众号封面_标题版_2.35比.jpeg",
+        "01_公众号封面_底图_2.35比1.png",
+        "01_公众号封面_底图_2.35比.png",
+        "01_公众号封面_底图_2.35比1.jpg",
+        "01_公众号封面_底图_2.35比.jpg",
+        "01_公众号封面_底图_2.35比1.jpeg",
+        "01_公众号封面_底图_2.35比.jpeg",
+    ]
+
+    for name in priority_names:
+        candidate = images_dir / name
+        if candidate.exists():
+            payload["cover_path"] = str(candidate)
+            return payload
+
+    return payload
+
+
 def build_render_js(payload: dict) -> str:
-    # Use ASCII-only escapes so Windows shell piping cannot corrupt Chinese text.
     payload_json = json.dumps(payload, ensure_ascii=True)
     return f"""(() => {{
   const payload = {payload_json};
@@ -40,6 +65,8 @@ def build_render_js(payload: dict) -> str:
     const section = document.createElement("section");
     const p = document.createElement("p");
     const span = document.createElement("span");
+    p.style.margin = "0 0 18px";
+    p.style.lineHeight = "1.9";
     span.setAttribute("leaf", "");
     span.textContent = text;
     p.appendChild(span);
@@ -55,8 +82,10 @@ def build_render_js(payload: dict) -> str:
     const styleSpan = document.createElement("span");
     const leafSpan = document.createElement("span");
 
-    styleSpan.style.fontSize = isMajor ? "22px" : "16px";
-    styleSpan.style.color = isMajor ? "rgb(34, 55, 48)" : "rgb(214, 106, 0)";
+    p.style.margin = isMajor ? "30px 0 14px" : "24px 0 12px";
+    p.style.lineHeight = "1.7";
+    styleSpan.style.fontSize = isMajor ? "21px" : "17px";
+    styleSpan.style.color = isMajor ? "rgb(34, 55, 48)" : "rgb(130, 72, 12)";
     leafSpan.setAttribute("leaf", "");
     leafSpan.textContent = text;
 
@@ -69,6 +98,7 @@ def build_render_js(payload: dict) -> str:
 
   function makeImage(imgSection) {{
     const outer = document.createElement("section");
+    outer.style.margin = "22px 0";
     outer.appendChild(imgSection.cloneNode(true));
     return outer;
   }}
@@ -120,6 +150,7 @@ def build_render_js(payload: dict) -> str:
   }}
 
   dispatchInput(bodyEditor);
+  bodyEditor.dispatchEvent(new Event("change", {{ bubbles: true }}));
 
   return JSON.stringify({{
     title: payload.title,
@@ -134,21 +165,19 @@ def build_render_js(payload: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("folder", help="公众号文章文件夹")
-    parser.add_argument("--out-dir", help="输出目录，默认写到文章文件夹下的.codex_wechat")
+    parser.add_argument("folder", help="wechat article folder")
+    parser.add_argument("--out-dir", help="output dir, defaults to .codex_wechat under article folder")
     args = parser.parse_args()
 
     folder = Path(args.folder).resolve()
     out_dir = Path(args.out_dir).resolve() if args.out_dir else folder / ".codex_wechat"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    payload = run_prepare(folder)
+    payload = prefer_horizontal_cover(folder, run_prepare(folder))
     image_paths = [block["path"] for block in payload["blocks"] if block["type"] == "image"]
     cover_path = payload.get("cover_path")
     body_upload_paths = [p for p in image_paths if p != cover_path]
     upload_paths = list(reversed(body_upload_paths))
-    if cover_path:
-        upload_paths.append(cover_path)
 
     (out_dir / "payload.json").write_text(
         json.dumps(payload, ensure_ascii=True, indent=2),
@@ -160,13 +189,20 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    print(json.dumps({
-        "folder": str(folder),
-        "out_dir": str(out_dir),
-        "title": payload["title"],
-        "image_upload_count": len(upload_paths),
-        "upload_reverse": upload_paths,
-    }, ensure_ascii=False, indent=2))
+    print(
+        json.dumps(
+            {
+                "folder": str(folder),
+                "out_dir": str(out_dir),
+                "title": payload["title"],
+                "image_upload_count": len(upload_paths),
+                "upload_reverse": upload_paths,
+                "cover_path": cover_path,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

@@ -8,11 +8,11 @@
     "images/02_正文配图_很多人做免费资料为什么没人要.png",
     "images/03_正文配图_真正有用的免费资料不是越大越好.png",
     "images/04_正文配图_免费资料最该解决什么问题.png",
-    "images/05_正文配图_为什么适合做5条AI工作流这种资.png",
+    "images/05_正文配图_为什么适合做5条AI工作流这种资料.png",
     "images/06_正文配图_免费资料和后续低客单怎么接.png"
   ],
   "status": "draft-ready",
-  "theme": "mint-grid",
-  "cover_hook": "问题在这",
-  "cover_kicker": "先把流程搭对"
+  "theme": "potato-wechat",
+  "cover_hook": "别先为了显得大方， 先为了筛出真",
+  "cover_kicker": "很多人做免费资料为什么没人要"
 }

@@ -5,7 +5,7 @@
   "source_article": "06_运营中心/2026/2026-07/文章总览/2026-07-14/20260714_文章总览_如果我现在从零开始做一个AI账号我前两周只会先搭这4个东西.md",
   "cover_path": "images/01_公众号封面_标题版_2.35比1.png",
   "body_image_paths": [
-    "images/02_正文配图_为什么很多人从零起号会一上来做太.png",
+    "images/02_正文配图_为什么很多人从零起号会一上来做太多.png",
     "images/03_正文配图_第一件事定一句话定位.png",
     "images/04_正文配图_第二件事建第一版选题池.png",
     "images/05_正文配图_第三件事搭内容工作流.png",
@@ -13,7 +13,7 @@
     "images/07_正文配图_前两周的节奏怎么排.png"
   ],
   "status": "draft-ready",
-  "theme": "blueprint",
-  "cover_hook": "如果我现在从零开",
-  "cover_kicker": "先把流程搭对"
+  "theme": "potato-wechat",
+  "cover_hook": "如果我现在从零开始做一个AI",
+  "cover_kicker": "为什么很多人从零起号会一上来做太多"
 }

@@ -7,12 +7,12 @@
   "body_image_paths": [
     "images/02_正文配图_为什么很多人一听agent就兴奋.png",
     "images/03_正文配图_什么时候agent才有意义.png",
-    "images/04_正文配图_重复动作都没固定agent也帮不.png",
+    "images/04_正文配图_重复动作都没固定agent也帮不了你.png",
     "images/05_正文配图_普通人现在更该先做的3件事.png",
-    "images/06_正文配图_agent是下一阶段升级不是第一.png"
+    "images/06_正文配图_agent是下一阶段升级不是第一步.png"
   ],
   "status": "draft-ready",
-  "theme": "newsroom",
-  "cover_hook": "先别急",
-  "cover_kicker": "先把流程搭对"
+  "theme": "potato-wechat",
+  "cover_hook": "别急着做agent先把你手上",
+  "cover_kicker": "为什么很多人一听 agent 就兴奋"
 }

@@ -7,12 +7,12 @@
   "body_image_paths": [
     "images/02_正文配图_为什么很多内容有流量却没后续.png",
     "images/03_正文配图_承接动作到底承接什么.png",
-    "images/04_正文配图_评论区私信资料包私域分别起什么作.png",
+    "images/04_正文配图_评论区私信资料包私域分别起什么作用.png",
     "images/05_正文配图_最低成本的承接链路怎么搭.png",
     "images/06_正文配图_为什么承接要尽早设计.png"
   ],
   "status": "draft-ready",
-  "theme": "warm-paper",
-  "cover_hook": "做内容的人最容易",
-  "cover_kicker": "先把流程搭对"
+  "theme": "potato-wechat",
+  "cover_hook": "做内容的人最容易忽略的一段工",
+  "cover_kicker": "为什么很多内容有流量却没后续"
 }

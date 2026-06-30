@@ -7,12 +7,12 @@
   "body_image_paths": [
     "images/02_正文配图_很多人不是没题而是没系统.png",
     "images/03_正文配图_选题系统最该有4个输入源.png",
-    "images/04_正文配图_AI在选题里最稳的角色不是替你决.png",
+    "images/04_正文配图_AI在选题里最稳的角色不是替你决定选.png",
     "images/05_正文配图_选题池为什么一定要打标签.png",
     "images/06_正文配图_一个可直接照抄的选题池框架.png"
   ],
   "status": "draft-ready",
-  "theme": "newsroom",
-  "cover_hook": "问题在这",
-  "cover_kicker": "先把流程搭对"
+  "theme": "potato-wechat",
+  "cover_hook": "别先灵感少， 先没有选题系统",
+  "cover_kicker": "很多人不是没题，而是没系统"
 }

@@ -5,7 +5,7 @@ param(
 
     [string]$Session = "wechat-batch",
 
-    [string]$Token = "1740056467"
+    [string]$Token = "766500620"
 )
 
 $ErrorActionPreference = "Stop"
@@ -25,7 +25,11 @@ foreach ($required in @($payloadPath, $uploadListPath, $renderPath)) {
 
 $payload = Get-Content -Raw -Encoding UTF8 -LiteralPath $payloadPath | ConvertFrom-Json
 $uploadList = Get-Content -Raw -Encoding UTF8 -LiteralPath $uploadListPath | ConvertFrom-Json
-$coverFileName = if ($payload.cover_path) { [System.IO.Path]::GetFileName([string]$payload.cover_path) } else { "" }
+$coverPath = if ($payload.cover_path) { [string]$payload.cover_path } else { "" }
+$coverFileName = if ($coverPath) { [System.IO.Path]::GetFileName($coverPath) } else { "" }
+
+# Old draft edit pages do not reliably preserve window.__coverImageInfo__ after save.
+# For those pages, a non-empty cover preview plus successful save is a stronger signal than the global field alone.
 
 function Invoke-AgentBrowser {
     param(
@@ -156,6 +160,31 @@ function Complete-CoverDialogFlow {
     return $third
 }
 
+function Select-CoverThumbSafely {
+    $script = @"
+(() => {
+  const items = Array.from(document.querySelectorAll('.weui-desktop-dialog .weui-desktop-img-picker__item'));
+  const first = items[0];
+  if (!first) throw new Error('cover picker item not found');
+
+  const alreadySelected = first.className.includes('selected');
+  if (!alreadySelected) {
+    const thumb = first.querySelector('.weui-desktop-img-picker__img-thumb');
+    if (!thumb) throw new Error('cover picker thumb not found');
+    thumb.click();
+  }
+
+  const next = Array.from(document.querySelectorAll('.weui-desktop-dialog .weui-desktop-btn_primary'))
+    .find(el => (el.innerText || '').trim() === '\u4e0b\u4e00\u6b65');
+  return JSON.stringify({
+    alreadySelected,
+    nextClass: next?.className || ''
+  });
+})()
+"@
+    Invoke-AgentBrowserEval -Script $script
+}
+
 function Decode-AsciiUnicode {
     param(
         [Parameter(Mandatory = $true)]
@@ -199,25 +228,7 @@ $openLibraryScript = @"
 Invoke-AgentBrowserEval -Script $openLibraryScript
 Wait-Millis -Ms 1500
 
-$selectCoverScript = @"
-(() => {
-  const targetName = $(ConvertTo-Json -Compress -InputObject $coverFileName);
-  const candidates = Array.from(document.querySelectorAll('*'))
-    .map(el => ({
-      el,
-      txt: (el.innerText || '').trim(),
-      rect: el.getBoundingClientRect()
-    }))
-    .filter(x => x.txt.endsWith('.png') && !x.txt.includes('\n') && x.rect.width > 0 && x.rect.height > 0)
-    .sort((a, b) => (a.rect.top - b.rect.top) || (a.rect.left - b.rect.left));
-  const exact = candidates.find(x => x.txt === targetName);
-  const target = (exact || candidates[0])?.el;
-  if (!target) throw new Error('cover image item not found in recent list');
-  target.click();
-  return (target.innerText || '').trim();
-})()
-"@
-Invoke-AgentBrowserEval -Script $selectCoverScript
+Select-CoverThumbSafely | Write-Host
 Wait-Millis -Ms 1000
 
 $coverFlowResult = Complete-CoverDialogFlow
@@ -226,11 +237,16 @@ Wait-Millis -Ms 2500
 $verifyScript = @"
 (() => {
   const text = document.body.innerText || '';
+  const coverPreview = getComputedStyle(document.querySelector('.js_cover_preview_new')).backgroundImage;
   return JSON.stringify({
     title: document.querySelectorAll('.ProseMirror')[0]?.innerText || '',
     hasSavedHint: text.includes($(ConvertTo-Json -Compress -InputObject $textManualSave)) || text.includes($(ConvertTo-Json -Compress -InputObject $textSaved)),
-    coverPreview: getComputedStyle(document.querySelector('.js_cover_preview_new')).backgroundImage,
-    hasCoverPreview: !!document.querySelector('.js_cover_preview_new') && getComputedStyle(document.querySelector('.js_cover_preview_new')).backgroundImage !== 'none',
+    coverPreview,
+    hasCoverPreview: !!document.querySelector('.js_cover_preview_new') && coverPreview !== 'none' && coverPreview !== 'url(\"\")',
+    oldDraftCoverState: {
+      previewExists: !!document.querySelector('.js_cover_preview_new'),
+      inferredSuccess: coverPreview && coverPreview !== 'none' && coverPreview !== 'url(\"\")'
+    },
     coverFlow: $($coverFlowResult | ConvertTo-Json -Compress)
   }, null, 2);
 })()
